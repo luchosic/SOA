@@ -7,18 +7,18 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="300"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="User"
+        android:text="Usuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="169dp" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="300"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
@@ -38,7 +38,7 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="150"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGUEATE"
         app:backgroundTint="#5B9F57"
@@ -48,7 +48,7 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="150"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REGISTRATE"
         app:backgroundTint="#5B9F57"
@@ -60,7 +60,6 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:height="50"
         android:text="CovidLess"
         android:textColor="#5B9F57"
         android:textSize="34sp"
