@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TP2</string>
+
+    <string-array name="comisiones">
+        <item>Comisión</item>
+        <item>2900 - Martes</item>
+        <item>3900 - Miércoles</item>
+    </string-array>
 </resources>
