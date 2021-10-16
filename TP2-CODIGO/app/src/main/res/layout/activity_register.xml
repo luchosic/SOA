@@ -9,7 +9,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="250dp"
         android:layout_marginBottom="10dp"
         android:text="Ingresa tus datos"
         android:textColor="#5B9F57"
@@ -21,63 +21,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/nombreRegistro"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:autofillHints="Nombre"
-        android:hint="Nombre"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/apellidoRegistro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/apellidoRegistro"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:autofillHints="Apellido"
-        android:hint="Apellido"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/nrodocRegistro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreRegistro" />
-
-    <EditText
-        android:id="@+id/nrodocRegistro"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="number"
-        android:autofillHints="Número de documento"
-        android:hint="Número de documento"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/mailRegistro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apellidoRegistro" />
-
-    <EditText
         android:id="@+id/mailRegistro"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:autofillHints="Mail"
+        android:ems="10"
         android:hint="Mail"
+        android:inputType="textPersonName"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/passwordRegistro"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nrodocRegistro" />
 
@@ -93,9 +48,73 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/comisionRegistro"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mailRegistro" />
 
+    <EditText
+        android:id="@+id/grupoRegistro"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="335dp"
+        android:autofillHints="Grupo"
+        android:ems="10"
+        android:hint="Grupo"
+        android:inputType="number"
+        android:maxLength="2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comisionRegistro" />
+
+    <Button
+        android:id="@+id/registrateButtom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="100dp"
+        android:text="REGISTRARSE"
+        app:backgroundTint="#5B9F57"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grupoRegistro"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/nrodocRegistro"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:autofillHints="Número de documento"
+        android:ems="10"
+        android:hint="Número de documento"
+        android:inputType="number"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/mailRegistro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apellidoRegistro" />
+
+    <EditText
+        android:id="@+id/apellidoRegistro"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:autofillHints="Apellido"
+        android:ems="10"
+        android:hint="Apellido"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/nrodocRegistro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombreRegistro" />
 
     <EditText
         android:id="@+id/comisionRegistro"
@@ -106,46 +125,47 @@
         android:ems="10"
         android:hint="Comisión (2900 o 3900)"
         android:inputType="number"
-        android:textSize="12sp"
         android:maxLength="4"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/grupoRegistro"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordRegistro" />
 
-
     <EditText
-        android:id="@+id/grupoRegistro"
+        android:id="@+id/nombreRegistro"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="335dp"
-        android:autofillHints="Grupo"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="8dp"
+        android:autofillHints="Nombre"
         android:ems="10"
-        android:hint="Grupo"
-        android:maxLength="2"
-        android:inputType="number"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/apellidoRegistro"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/comisionRegistro" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/registrateButtom"
+        android:id="@+id/volverButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="225dp"
-        android:text="REGISTRARSE"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="301dp"
+        android:layout_marginRight="301dp"
+        android:layout_marginBottom="103dp"
+        android:text="Volver"
         app:backgroundTint="#5B9F57"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/nombreRegistro"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grupoRegistro"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
