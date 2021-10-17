@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="8dp"
-        android:text="No tenes usuario? Registrate"
+        android:text="¿No tenés usuario?"
         app:layout_constraintBottom_toTopOf="@+id/registroButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
