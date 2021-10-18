@@ -9,14 +9,12 @@ import android.widget.Button;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button registroBtn;
+    Button registroBtn = (Button)findViewById(R.id.registroButton);;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        registroBtn = (Button)findViewById(R.id.registroButton);
 
         registroBtn.setOnClickListener(new View.OnClickListener() {
             @Override

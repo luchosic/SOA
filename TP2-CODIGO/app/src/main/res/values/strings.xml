@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">TP2</string>
+    <string name="button">Button</string>
+    <string name="bienvenido">¡Bienvenido a COVIDLess!</string>
+    <string name="sin_usuario_textview">¿No tenés usuario?</string>
+    <string name="covidless_textview">COVIDLess</string>
+    <string name="indicar_mail_textview">Para empezar, indique su mail:</string>
+    <string name="notificar_envio_mail_textview">Le enviaremos a su mail un código para ingresar</string>
+    <string name="enviar_codigo_boton_text">Enviar código</string>
 
     <string-array name="comisiones">
         <item>Comisión</item>
