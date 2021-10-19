@@ -7,10 +7,21 @@
     <string name="indicar_mail_textview">Para empezar, indique su mail:</string>
     <string name="notificar_envio_mail_textview">Le enviaremos a su mail un código para ingresar</string>
     <string name="enviar_codigo_boton_text">Enviar código</string>
+    <string name="ingresar_codigo">Ingrese el código que le llegó al mail</string>
+    <string name="continuar_logeo">Continuar</string>
+    <string name="seleccione_lugar">Seleccione el lugar que desea visitar para conocer sus requisitos:</string>
 
     <string-array name="comisiones">
         <item>Comisión</item>
         <item>2900 - Martes</item>
         <item>3900 - Miércoles</item>
     </string-array>
+
+    <string name="lista_lugares">ListView</string>
+    <string-array name="lista_places">
+        <item>Cine</item>
+        <item>Cancha</item>
+        <item>Vuelos nacionales</item>
+    </string-array>
 </resources>
+
