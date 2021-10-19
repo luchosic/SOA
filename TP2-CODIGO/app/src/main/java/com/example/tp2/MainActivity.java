@@ -9,34 +9,51 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.tp2.data.JavaMail;
+
 public class MainActivity extends AppCompatActivity {
 
-    //EditText mailUser = (EditText) findViewById(R.id.emailCode);
+    EditText mailUser;
+    public EditText mEmail;
+    public String mSubject;
+    public String mMessage;
+
     Button codigoButton;
 
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_autentication);
+        //Toolbar toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+
+        mEmail = (EditText) findViewById(R.id.mailCodigo);
+        mMessage = "Codigo para ingresar";
+        mSubject = "1234";
 
         codigoButton = (Button) findViewById(R.id.codigoButton);
 
         codigoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_SEND);
-                i.setType("message/rfc822");
-                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"zevemmopabo-8478@yopmail.com"});
-                i.putExtra(Intent.EXTRA_SUBJECT, "CovidLess - Codigo de ingreso");
-                i.putExtra(Intent.EXTRA_TEXT   , "¡Hola! Su código de ingreso es: 1234");
-                try {
-                    startActivity(Intent.createChooser(i, "Enviando correo..."));
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(MainActivity.this, "No hay clientes de correo electrónico instalados.", Toast.LENGTH_SHORT).show();
-                }
+                sendMail();
+
             }
         });
 
+    }
+
+
+    private void sendMail() {
+
+        String mail = mEmail.getText().toString().trim();
+        String subject = "Codigo para ingresar";
+        String message = "1234";
+
+        //Send Mail
+        JavaMail javaMail = new JavaMail(this,mail,subject,message);
+
+        javaMail.execute();
 
     }
 }
