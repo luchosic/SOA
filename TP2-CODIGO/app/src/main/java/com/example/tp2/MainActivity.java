@@ -2,6 +2,8 @@ package com.example.tp2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.tp2.data.Battery;
 import com.example.tp2.data.JavaMail;
 
 import java.util.Random;
@@ -20,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     EditText mailUser;
     public EditText mEmail;
     public String randomCode;
-
     Button codigoButton;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
         mEmail = (EditText) findViewById(R.id.mailCodigo);
 
         codigoButton = (Button) findViewById(R.id.codigoButton);
+
+        Battery batStatus = new Battery(getApplicationContext());
+        Toast.makeText(getApplicationContext(), "Su porcentaje de batería es: " + batStatus.getBatteryPercentage() + "%", Toast.LENGTH_LONG).show();
 
         codigoButton.setOnClickListener(new View.OnClickListener() {
             @Override
