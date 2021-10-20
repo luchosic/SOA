@@ -33,13 +33,20 @@ public class MainActivity extends AppCompatActivity {
         codigoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                randomCode = String.valueOf((int)(Math.random() * 9000) + 1000);
 
-                sendMail(randomCode);
+                if(mEmail.getText().toString().isEmpty()){
+                    mEmail.setError("Debe ingresar un mail");
+                }
+                else{
+                    //randomCode = String.valueOf((int)(Math.random() * 9000) + 1000);
+                    randomCode = String.valueOf("1234");
 
-                Intent intent = new Intent(MainActivity.this, AutenticationCodeActivity.class);
-                intent.putExtra("randomCode", randomCode);
-                startActivity(intent);
+                    sendMail(randomCode);
+
+                    Intent intent = new Intent(MainActivity.this, AutenticationCodeActivity.class);
+                    intent.putExtra("randomCode", randomCode);
+                    startActivity(intent);
+                }
             }
         });
 
