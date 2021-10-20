@@ -43,7 +43,7 @@ public class AutenticationCodeActivity extends AppCompatActivity {
             }
         });
 
-        /*volverButton = (Button)findViewById(R.id.volverButton);
+        volverButton = (Button)findViewById(R.id.volverButton);
 
         volverButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +51,7 @@ public class AutenticationCodeActivity extends AppCompatActivity {
                 Intent intentVolver = new Intent(AutenticationCodeActivity.this, MainActivity.class);
                 startActivity(intentVolver);
             }
-        });*/
+        });
 
     }
 }
