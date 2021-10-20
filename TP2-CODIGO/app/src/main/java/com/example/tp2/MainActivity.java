@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(mEmail.getText().toString().isEmpty()){
-                    mEmail.setError("Debe ingresar un mail");
+                if(!Patterns.EMAIL_ADDRESS.matcher(mEmail.getText().toString()).matches()){
+                    mEmail.setError("Debe ingresar un mail válido");
                 }
                 else{
                     //randomCode = String.valueOf((int)(Math.random() * 9000) + 1000);
@@ -56,11 +57,11 @@ public class MainActivity extends AppCompatActivity {
     private void sendMail(String randomCode) {
 
         String mail = mEmail.getText().toString().trim();
-        String subject = "Codigo para ingresar";
+        String subject = "Bienvenido a CovidLess!";
+        String body = "Su código de verificación es: " + randomCode;
 
-        //Send Mail
-        JavaMail javaMail = new JavaMail(this,mail,subject,randomCode);
-
+        //Armo y envio mail
+        JavaMail javaMail = new JavaMail(this,mail,subject,body);
         javaMail.execute();
 
     }
