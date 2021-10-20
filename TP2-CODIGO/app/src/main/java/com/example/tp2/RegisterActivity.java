@@ -16,7 +16,6 @@ import android.widget.LinearLayout;
 public class RegisterActivity extends AppCompatActivity {
 
     private InternetConnection internetConnection;
-    LinearLayout layoutWidgetNoInternetConnection;
 
     Button volverBtn;
     Button registrateButtom;
