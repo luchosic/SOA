@@ -10,6 +10,8 @@
     <string name="ingresar_codigo">Ingrese el código que le llegó al mail</string>
     <string name="continuar_logeo">Continuar</string>
     <string name="seleccione_lugar">Seleccione el lugar que desea visitar para conocer sus requisitos:</string>
+    <string name="APIEnvoriment">TEST</string>
+    <string name="retrofit_server">http://so-unlam.net.ar/api/</string>
 
     <string-array name="comisiones">
         <item>Comisión</item>
