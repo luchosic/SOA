@@ -21,9 +21,10 @@
 
     <string name="lista_lugares">ListView</string>
     <string-array name="lista_places">
-        <item>Cine</item>
+        <item>Cine/Teatro</item>
         <item>Cancha</item>
         <item>Vuelos nacionales</item>
+        <item>Vuelos internacionales</item>
     </string-array>
 </resources>
 
