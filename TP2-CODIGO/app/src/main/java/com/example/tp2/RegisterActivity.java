@@ -40,6 +40,10 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        String userEmail = extras.getString("useremail");
+
         final EditText editTextNombre       = findViewById(R.id.nombreRegistro);
         final EditText editTextApellido     = findViewById(R.id.apellidoRegistro);
         final EditText editTextDNI          = findViewById(R.id.nrodocRegistro);
@@ -47,6 +51,8 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText editTextEmail        = findViewById(R.id.mailRegistro);
         final EditText editTextPassword     = findViewById(R.id.passwordRegistro);
         final EditText editTextGrupo        = findViewById(R.id.grupoRegistro);
+
+        editTextEmail.setText(userEmail);
 
         if(InternetConnection.isOnline(this)){
             Log.e(TAG, "Connected to Internet");

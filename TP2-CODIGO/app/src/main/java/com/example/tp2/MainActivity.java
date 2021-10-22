@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(MainActivity.this, AutenticationCodeActivity.class);
                     intent.putExtra("randomCode", randomCode);
+                    intent.putExtra("useremail", mEmail.getText().toString());
                     startActivity(intent);
                 }
             }

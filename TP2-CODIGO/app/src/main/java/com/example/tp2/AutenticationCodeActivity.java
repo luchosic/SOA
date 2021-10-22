@@ -26,6 +26,7 @@ public class AutenticationCodeActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         String randomCode = extras.getString("randomCode");
+        String userEmail = extras.getString("useremail");
 
         coninueButton = (Button) findViewById(R.id.ingresarButton);
 
@@ -35,6 +36,7 @@ public class AutenticationCodeActivity extends AppCompatActivity {
 
                 if ((codigoIngresado.getText().toString()).equals(randomCode)){
                     Intent intentContinuar = new Intent(AutenticationCodeActivity.this, LoginActivity.class);
+                    intentContinuar.putExtra("useremail", userEmail);
                     startActivity(intentContinuar);
                 }
                 else{
