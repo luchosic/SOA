@@ -127,6 +127,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 //Voy a la pantalla de Login
                                 Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                                i.putExtra("useremail", userEmail);
                                 startActivity(i);
 
                             } else {

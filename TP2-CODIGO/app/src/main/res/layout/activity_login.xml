@@ -33,7 +33,6 @@
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:text="Contraseña"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
