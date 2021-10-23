@@ -42,9 +42,6 @@ public class LoginActivity extends AppCompatActivity {
 
         editTextEmail.setText(userEmail);
 
-
-
-
         loginButton = (Button)findViewById(R.id.loginButton);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -72,8 +69,8 @@ public class LoginActivity extends AppCompatActivity {
                             //sessionManager.storeTokens(response.body().getToken(), response.body().getToken_refresh());
                             //sessionManager.storeEmail(emailEditText.getText().toString());
 
-                            System.out.println("PARECE QUE ENCONTRO LE USUARIO CARAJO");
                             Intent intent = new Intent(getApplicationContext(), PlacesPageActivity.class);
+                            intent.putExtra("useremail", user.getEmail());
                             startActivity(intent);
 
                         } else {

@@ -20,8 +20,19 @@ public class PlacesPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_places_to_visit);
 
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        String userEmail = extras.getString("useremail");
+
+        TextView textBienvenida;
+
+        textBienvenida = (TextView)findViewById(R.id.textBienvenida);
+
+        textBienvenida.setText("¡Bienvenid@ " + userEmail.split("@")[0].trim() + "!");
+
         listView=(ListView)findViewById(R.id.listView);
         textView=(TextView)findViewById(R.id.textView);
+
         listItem = getResources().getStringArray(R.array.lista_places);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, listItem);
