@@ -3,18 +3,10 @@ package com.example.tp2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-
-
-import android.os.Bundle;
-import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,9 +30,14 @@ public class PlacesPageActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                // TODO Auto-generated method stub
-                String value=adapter.getItem(position);
-                Toast.makeText(getApplicationContext(),value,Toast.LENGTH_SHORT).show();
+                String selectedPlace=adapter.getItem(position);
+                //Toast.makeText(getApplicationContext(),value,Toast.LENGTH_SHORT).show();
+
+                System.out.println("valor tocado: " + selectedPlace);
+
+                Intent intentContinuar = new Intent(getApplicationContext(), RequirementsByPlaceActivity.class);
+                intentContinuar.putExtra("selectedPlace", selectedPlace);
+                startActivity(intentContinuar);
 
             }
         });

@@ -8,9 +8,12 @@
     <string name="notificar_envio_mail_textview">Le enviaremos a su mail un código para ingresar</string>
     <string name="enviar_codigo_boton_text">Enviar código</string>
     <string name="ingresar_codigo">Ingrese el código que le llegó al mail</string>
-    <string name="continuar_logeo">Continuar</string>
+    <string name="continuar">Continuar</string>
     <string name="seleccione_lugar">Seleccione el lugar que desea visitar para conocer sus requisitos:</string>
-    <string name="APIEnvoriment">TEST</string>
+    <string name="leyenda_lugar">Usted ha seleccionado: </string>
+    <string name="leyenda_requisitos">Esta es la lista de requisitos para ingresar: </string>
+    <string name="leyenda_continuar">Si cumple con todos los requisitos, presione continuar</string>
+    <string name="APIEnvoriment">PROD</string>
     <string name="retrofit_server">http://so-unlam.net.ar/api/</string>
 
     <string-array name="comisiones">
@@ -26,5 +29,7 @@
         <item>Vuelos nacionales</item>
         <item>Vuelos internacionales</item>
     </string-array>
+
+
 </resources>
 

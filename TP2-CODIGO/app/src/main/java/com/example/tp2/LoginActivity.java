@@ -73,6 +73,8 @@ public class LoginActivity extends AppCompatActivity {
                             //sessionManager.storeEmail(emailEditText.getText().toString());
 
                             System.out.println("PARECE QUE ENCONTRO LE USUARIO CARAJO");
+                            Intent intent = new Intent(getApplicationContext(), PlacesPageActivity.class);
+                            startActivity(intent);
 
                         } else {
                             //Parseo la respuesta para poder mostrarla en la app
