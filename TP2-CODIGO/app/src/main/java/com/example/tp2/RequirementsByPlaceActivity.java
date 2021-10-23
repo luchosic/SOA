@@ -15,6 +15,7 @@ public class RequirementsByPlaceActivity extends AppCompatActivity {
     TextView requirementsCancha;
     TextView requirementsVuelosNacionales;
     TextView requirementsVuelosInternacionales;
+    TextView textSelectedPlace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +26,13 @@ public class RequirementsByPlaceActivity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         String selectedPlace = extras.getString("selectedPlace");
 
+        textSelectedPlace = (TextView) findViewById(R.id.selectedPlace);
         requirementsTeatro = (TextView) findViewById(R.id.requisitosTeatro);
         requirementsCancha = (TextView) findViewById(R.id.requisitosCancha);
         requirementsVuelosNacionales = (TextView) findViewById(R.id.requisitosVuelosNacionales);
         requirementsVuelosInternacionales = (TextView) findViewById(R.id.requisitosVuelosInternacionales);
 
+        textSelectedPlace.setText(selectedPlace);
         requirementsTeatro.setVisibility(View.INVISIBLE);
         requirementsCancha.setVisibility(View.INVISIBLE);
         requirementsVuelosNacionales.setVisibility(View.INVISIBLE);
@@ -50,7 +53,7 @@ public class RequirementsByPlaceActivity extends AppCompatActivity {
 
             case "Vuelos internacionales":
                 requirementsVuelosInternacionales.setVisibility(View.VISIBLE);
-                break;
+            break;
         }
 
 

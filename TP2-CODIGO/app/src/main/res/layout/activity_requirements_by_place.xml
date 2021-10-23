@@ -5,48 +5,32 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/texto_leyenda_lugar"
-        android:layout_width="355dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="33dp"
-        android:text="@string/leyenda_lugar"
-        android:textColor="#5B9F57"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_requisitos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/texto_leyenda_requisitos"
         android:layout_width="350dp"
-        android:layout_height="55dp"
+        android:layout_height="30dp"
         android:layout_marginTop="116dp"
-        android:layout_marginBottom="377dp"
+        android:layout_marginBottom="80dp"
         android:text="@string/leyenda_requisitos"
         android:textColor="#5B9F57"
         android:textSize="20sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_continuar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/texto_leyenda_continuar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="20dp"
         android:text="@string/leyenda_continuar"
         app:layout_constraintBottom_toTopOf="@+id/codigoButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texto_leyenda_requisitos" />
 
@@ -54,29 +38,29 @@
         android:id="@+id/codigoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="80dp"
         android:backgroundTint="#5B9F57"
         android:text="@string/continuar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/requisitosTeatro"
-        android:layout_width="342dp"
-        android:layout_height="314dp"
+        android:layout_width="347dp"
+        android:layout_height="250dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="42dp"
         android:layout_marginEnd="41dp"
         android:layout_marginRight="41dp"
         android:layout_marginBottom="51dp"
-        android:text="-Barbijo o tapaboca
-                      \n-Entrada (asiento de por medio)
-                      \n-APP Cuidar
-                      \n-Declaración jurada de que no estas transitando la enfermedad
-                      \n-Ganas de pasarla bien!"
+        android:text="\t- Barbijo o tapaboca
+                      \n\t- Entrada (asiento de por medio)
+                      \n\t- APP Cuidar
+                      \n\t- Declaración jurada de que no estas transitando la enfermedad
+                      \n\t- Ganas de pasarla bien!"
         app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_continuar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,20 +68,20 @@
 
     <TextView
         android:id="@+id/requisitosCancha"
-        android:layout_width="342dp"
-        android:layout_height="314dp"
+        android:layout_width="347dp"
+        android:layout_height="250dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="42dp"
         android:layout_marginEnd="41dp"
         android:layout_marginRight="41dp"
         android:layout_marginBottom="51dp"
-        android:text="-Barbijo o tapaboca
-                      \n-Entrada (asiento de por medio)
-                      \n-APP Cuidar
-                      \n-Declaración jurada de que no estas transitando la enfermedad
-                      \n-Carnet de vacunación
-                      \n-Ganas de alentar por tu equipo"
+        android:text="\t- Barbijo o tapaboca
+                      \n\t- Entrada (asiento de por medio)
+                      \n\t- APP Cuidar
+                      \n\t- Declaración jurada de que no estas transitando la enfermedad
+                      \n\t- Carnet de vacunación
+                      \n\t- Ganas de alentar por tu equipo"
         app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_continuar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,21 +89,21 @@
 
     <TextView
         android:id="@+id/requisitosVuelosNacionales"
-        android:layout_width="342dp"
-        android:layout_height="314dp"
+        android:layout_width="347dp"
+        android:layout_height="250dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="42dp"
         android:layout_marginEnd="41dp"
         android:layout_marginRight="41dp"
         android:layout_marginBottom="51dp"
-        android:text="-Barbijo o tapaboca
-                      \n-Pasaje
-                      \n-APP Cuidar
-                      \n-Declaración jurada de que no estas transitando la enfermedad
-                      \n-Llegar 3 hs antes de horario de partida
-                      \n-Valijas
-                      \n-Documento"
+        android:text="\t- Barbijo o tapaboca
+                      \n\t- Pasaje
+                      \n\t- APP Cuidar
+                      \n\t- Declaración jurada de que no estas transitando la enfermedad
+                      \n\t- Llegar 3 hs antes de horario de partida
+                      \n\t- Valijas
+                      \n\t- Documento"
         app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_continuar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,25 +111,42 @@
 
     <TextView
         android:id="@+id/requisitosVuelosInternacionales"
-        android:layout_width="342dp"
-        android:layout_height="314dp"
+        android:layout_width="347dp"
+        android:layout_height="250dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="42dp"
         android:layout_marginEnd="41dp"
         android:layout_marginRight="41dp"
         android:layout_marginBottom="51dp"
-        android:text="-Barbijo o tapaboca
-                      \n-Pasaje
-                      \n-APP Cuidar
-                      \n-Declaración jurada de que no estas transitando la enfermedad
-                      \n-Llegar 8 hs antes de horario de partida
-                      \n-Certificado de vacunación (2 dosis) - NO SE ACEPTA SPUTNIK
-                      \n-Valijas
-                      \n-Pasaporte"
+        android:text="- Barbijo o tapaboca
+                      \n\t- Pasaje
+                      \n\t- APP Cuidar
+                      \n\t- Declaración jurada de que no estas transitando la enfermedad
+                      \n\t- Llegar 8 hs antes de horario de partida
+                      \n\t- Certificado de vacunación (2 dosis) - NO SE ACEPTA SPUTNIK
+                      \n\t- Valijas
+                      \n\t- Pasaporte"
         app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_continuar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_leyenda_requisitos" />
+        app:layout_constraintTop_toBottomOf="@+id/texto_leyenda_requisitos"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/selectedPlace"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="#5B9F57"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_requisitos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
