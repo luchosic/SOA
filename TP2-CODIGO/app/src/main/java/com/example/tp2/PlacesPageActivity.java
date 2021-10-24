@@ -26,7 +26,7 @@ public class PlacesPageActivity extends AppCompatActivity {
 
         TextView textBienvenida;
 
-        textBienvenida = (TextView)findViewById(R.id.textBienvenida);
+        textBienvenida = findViewById(R.id.textBienvenida);
 
         textBienvenida.setText("¡Bienvenid@ " + userEmail.split("@")[0].trim() + "!");
 

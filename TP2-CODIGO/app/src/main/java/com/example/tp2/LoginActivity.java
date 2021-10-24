@@ -2,7 +2,11 @@ package com.example.tp2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +18,10 @@ import com.example.tp2.data.SoaAPIErrorMessage;
 import com.example.tp2.data.SoaAPIResponse;
 import com.example.tp2.data.SoaAPIService;
 import com.example.tp2.data.User;
+import com.example.tp2.db.MyOpenHelper;
 import com.google.gson.Gson;
+
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,9 +72,37 @@ public class LoginActivity extends AppCompatActivity {
                         if (response.isSuccessful()) {
                             Log.i(TAG, response.body().toString());
 
-                            //Guardo los tokens en el sharedPreferences
-                            //sessionManager.storeTokens(response.body().getToken(), response.body().getToken_refresh());
-                            //sessionManager.storeEmail(emailEditText.getText().toString());
+                            MyOpenHelper dbHelper = new MyOpenHelper(getApplicationContext());
+                            SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+                            if (db != null) {
+
+                                Date date1=java.util.Calendar.getInstance().getTime();
+
+                                ContentValues cv = new ContentValues();
+                                cv.put("username", userEmail);
+                                cv.put("date", String.valueOf(date1));
+                                db.insert("user_login", null, cv);
+
+                                //El siguiente codigo es para visualizar lo que se esta guardando en la base de datos.
+                                //Eliminarlo para entegar
+                                        Cursor c = db.rawQuery("SELECT _id, username, date FROM user_login", null);
+
+                                        if (c != null) {
+                                            c.moveToFirst();
+                                            do {
+                                                //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
+                                                @SuppressLint("Range") String user = c.getString(c.getColumnIndex("username"));
+                                                @SuppressLint("Range") String date = c.getString(c.getColumnIndex("date"));
+                                                System.out.println("Username: " + user + " DATE: " + date);
+                                            } while (c.moveToNext());
+                                        }
+
+                                        //Cerramos el cursor y la conexion con la base de datos
+                                        c.close();
+                                }
+
+                            db.close();
 
                             Intent intent = new Intent(getApplicationContext(), PlacesPageActivity.class);
                             intent.putExtra("useremail", user.getEmail());
