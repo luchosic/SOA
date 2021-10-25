@@ -31,20 +31,83 @@
         android:text="@string/leyenda_continuar"
         app:layout_constraintBottom_toTopOf="@+id/codigoButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texto_leyenda_requisitos" />
 
-    <Button
-        android:id="@+id/codigoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="190dp"
-        android:backgroundTint="#5B9F57"
-        android:text="@string/continuar"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/requisitosVuelosInternacionales"
+        android:layout_width="347dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginRight="41dp"
+        android:layout_marginBottom="51dp"
+        android:text="\t- Barbijo o tapaboca
+                      \n\t- APP Cuidar - Con Certificado de Viaje
+                      \n\t- Declaración jurada (no tienes sintomas compatibles con Covid)
+                      \n\t- Certificado de vacunación (2 dosis) - NO SE ACEPTA SPUTNIK V
+                      \n\t- Llegar al aeropuerto 8 hs antes de horario de partida
+                      \n\t- Pasaje
+                      \n\t- Valijas
+                      \n\t- Pasaporte"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_continuar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_leyenda_requisitos"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/requisitosCancha"
+        android:layout_width="347dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginRight="41dp"
+        android:layout_marginBottom="51dp"
+        android:text="\t- Barbijo o tapaboca
+                      \n\t- Entrada (asiento de por medio)
+                      \n\t- APP Cuidar
+                      \n\t- Declaración jurada (no tienes sintomas compatibles con Covid)
+                      \n\t- Carnet de vacunación
+                      \n\t- Ganas de alentar por tu equipo"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_continuar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_leyenda_requisitos"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/requisitosVuelosNacionales"
+        android:layout_width="347dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginRight="41dp"
+        android:layout_marginBottom="51dp"
+        android:text="\t- Barbijo o tapaboca
+                      \n\t- APP Cuidar - Con Certificado de Viaje
+                      \n\t- Declaración jurada (no tienes sintomas compatibles con Covid)
+                      \n\t- Llegar 3 hs antes de horario de partida
+                      \n\t- Pasaje
+                      \n\t- Valijas
+                      \n\t- Documento de identidad"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_continuar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_leyenda_requisitos"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/requisitosTeatro"
@@ -59,80 +122,27 @@
         android:text="\t- Barbijo o tapaboca
                       \n\t- Entrada (asiento de por medio)
                       \n\t- APP Cuidar
-                      \n\t- Declaración jurada de que no estas transitando la enfermedad
+                      \n\t- Declaración jurada (no tienes sintomas compatibles con Covid)
                       \n\t- Ganas de pasarla bien!"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_continuar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_leyenda_requisitos" />
-
-    <TextView
-        android:id="@+id/requisitosCancha"
-        android:layout_width="347dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginRight="41dp"
-        android:layout_marginBottom="51dp"
-        android:text="\t- Barbijo o tapaboca
-                      \n\t- Entrada (asiento de por medio)
-                      \n\t- APP Cuidar
-                      \n\t- Declaración jurada de que no estas transitando la enfermedad
-                      \n\t- Carnet de vacunación
-                      \n\t- Ganas de alentar por tu equipo"
-        app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_continuar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_leyenda_requisitos" />
-
-    <TextView
-        android:id="@+id/requisitosVuelosNacionales"
-        android:layout_width="347dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginRight="41dp"
-        android:layout_marginBottom="51dp"
-        android:text="\t- Barbijo o tapaboca
-                      \n\t- Pasaje
-                      \n\t- APP Cuidar
-                      \n\t- Declaración jurada de que no estas transitando la enfermedad
-                      \n\t- Llegar 3 hs antes de horario de partida
-                      \n\t- Valijas
-                      \n\t- Documento"
-        app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_continuar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_leyenda_requisitos" />
-
-    <TextView
-        android:id="@+id/requisitosVuelosInternacionales"
-        android:layout_width="347dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginRight="41dp"
-        android:layout_marginBottom="51dp"
-        android:text="\t- Barbijo o tapaboca
-                      \n\t- Pasaje
-                      \n\t- APP Cuidar
-                      \n\t- Declaración jurada de que no estas transitando la enfermedad
-                      \n\t- Llegar 8 hs antes de horario de partida
-                      \n\t- Certificado de vacunación (2 dosis) - NO SE ACEPTA SPUTNIK
-                      \n\t- Valijas
-                      \n\t- Pasaporte"
-        app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_continuar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texto_leyenda_requisitos"
         app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/codigoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="160dp"
+        android:backgroundTint="#5B9F57"
+        android:text="@string/continuar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/selectedPlace"
@@ -146,6 +156,24 @@
         app:layout_constraintBottom_toTopOf="@+id/texto_leyenda_requisitos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/volverBoton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="644dp"
+        android:layout_marginEnd="301dp"
+        android:layout_marginRight="301dp"
+        android:layout_marginBottom="39dp"
+        android:text="Volver"
+        app:backgroundTint="#5B9F57"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

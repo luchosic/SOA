@@ -35,7 +35,7 @@ public class AutenticationCodeActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if ((codigoIngresado.getText().toString()).equals(randomCode)){
-                    Intent intentContinuar = new Intent(AutenticationCodeActivity.this, LoginActivity.class);
+                    Intent intentContinuar = new Intent(getApplicationContext(), LoginActivity.class);
                     intentContinuar.putExtra("useremail", userEmail);
                     startActivity(intentContinuar);
                 }
@@ -50,7 +50,7 @@ public class AutenticationCodeActivity extends AppCompatActivity {
         volverButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentVolver = new Intent(AutenticationCodeActivity.this, MainActivity.class);
+                Intent intentVolver = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intentVolver);
             }
         });

@@ -6,10 +6,8 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +19,7 @@ public class RequirementsByPlaceActivity extends AppCompatActivity implements Se
     TextView requirementsVuelosNacionales;
     TextView requirementsVuelosInternacionales;
     TextView textSelectedPlace;
+    Button volverBoton;
 
     private SensorManager mSensorManager;
 
@@ -35,11 +34,11 @@ public class RequirementsByPlaceActivity extends AppCompatActivity implements Se
         Bundle extras = intent.getExtras();
         String selectedPlace = extras.getString("selectedPlace");
 
-        textSelectedPlace = (TextView) findViewById(R.id.selectedPlace);
-        requirementsTeatro = (TextView) findViewById(R.id.requisitosTeatro);
-        requirementsCancha = (TextView) findViewById(R.id.requisitosCancha);
-        requirementsVuelosNacionales = (TextView) findViewById(R.id.requisitosVuelosNacionales);
-        requirementsVuelosInternacionales = (TextView) findViewById(R.id.requisitosVuelosInternacionales);
+        textSelectedPlace = findViewById(R.id.selectedPlace);
+        requirementsTeatro = findViewById(R.id.requisitosTeatro);
+        requirementsCancha = findViewById(R.id.requisitosCancha);
+        requirementsVuelosNacionales = findViewById(R.id.requisitosVuelosNacionales);
+        requirementsVuelosInternacionales = findViewById(R.id.requisitosVuelosInternacionales);
 
         textSelectedPlace.setText(selectedPlace);
         requirementsTeatro.setVisibility(View.INVISIBLE);
@@ -64,6 +63,16 @@ public class RequirementsByPlaceActivity extends AppCompatActivity implements Se
                 requirementsVuelosInternacionales.setVisibility(View.VISIBLE);
             break;
         }
+
+        volverBoton = findViewById(R.id.volverBoton);
+
+        volverBoton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentVolver = new Intent(getApplicationContext(), PlacesPageActivity.class);
+                startActivity(intentVolver);
+            }
+        });
 
     }
 
