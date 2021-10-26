@@ -2,11 +2,8 @@ package com.example.tp2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -15,8 +12,6 @@ import android.widget.Toast;
 
 import com.example.tp2.data.Battery;
 import com.example.tp2.data.JavaMail;
-
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_autentication);
+        setContentView(R.layout.activity_main);
 
         mEmail = (EditText) findViewById(R.id.mailCodigo);
 
@@ -49,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
                     sendMail(randomCode);
 
-                    Intent intent = new Intent(MainActivity.this, AutenticationCodeActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), AutenticationCodeActivity.class);
                     intent.putExtra("randomCode", randomCode);
                     intent.putExtra("useremail", mEmail.getText().toString());
                     startActivity(intent);

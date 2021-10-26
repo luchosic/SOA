@@ -13,6 +13,13 @@
     <string name="leyenda_lugar">Usted ha seleccionado: </string>
     <string name="leyenda_requisitos">Requisitos para ingresar: </string>
     <string name="leyenda_continuar">Si cumple con todos los requisitos, presione continuar</string>
+    <string name="leyenda_tenes_todo">Genial! Ya tenes todo lo que necesitas? </string>
+    <string name="leyenda_tempertura">Ahora vamos a tomar la temperatura del ambiente.
+                Solo es recomendable salir de tu casa si la temperatura es mayor a 20°C,
+                ya que el virus se propaga más lentamente en verano</string>
+    <string name="leyenda_final">Todo listo! Disfruta tu actividad, y recorda que cuidandote, nos cuidas a todos</string>
+    <string name="leyenda_gracias">Gracias por utilizar CovidLess</string>
+    <string name="ir">Ir</string>
     <string name="APIEnvoriment">PROD</string>
     <string name="retrofit_server">http://so-unlam.net.ar/api/</string>
 

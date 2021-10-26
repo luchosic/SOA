@@ -20,6 +20,7 @@ public class RequirementsByPlaceActivity extends AppCompatActivity implements Se
     TextView requirementsVuelosInternacionales;
     TextView textSelectedPlace;
     Button volverBoton;
+    Button continueButton;
 
     private SensorManager mSensorManager;
 
@@ -64,12 +65,25 @@ public class RequirementsByPlaceActivity extends AppCompatActivity implements Se
             break;
         }
 
-        volverBoton = findViewById(R.id.volverBoton);
+
+        continueButton = findViewById(R.id.continuarButton);
+
+        //continueButton.setEnabled(false);
+
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentContinuar = new Intent(getApplicationContext(), TemperatureActivity.class);
+                startActivity(intentContinuar);
+            }
+        });
+
+        volverBoton = findViewById(R.id.volverButton);
 
         volverBoton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentVolver = new Intent(getApplicationContext(), PlacesPageActivity.class);
+                Intent intentVolver = new Intent(getApplicationContext(), PlacesToGoActivity.class);
                 startActivity(intentVolver);
             }
         });
@@ -79,13 +93,11 @@ public class RequirementsByPlaceActivity extends AppCompatActivity implements Se
     // Metodo para iniciar el acceso a los sensores
     protected void startSensoring() {
        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
-       mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE), SensorManager.SENSOR_DELAY_NORMAL);
  }
 
     // Metodo para parar la escucha de los sensores
     private void stopSensoring() {
         mSensorManager.unregisterListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER));
-        mSensorManager.unregisterListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE));
     }
 
     @Override
@@ -105,19 +117,10 @@ public class RequirementsByPlaceActivity extends AppCompatActivity implements Se
                 case Sensor.TYPE_ACCELEROMETER :
                     if ((event.values[0] > 25) || (event.values[1] > 25) || (event.values[2] > 25)) {
                         System.out.println("VIBRACION DETECTADA");
+                        continueButton.setEnabled(true);
                     }
-                    break;
+                break;
 
-                case Sensor.TYPE_AMBIENT_TEMPERATURE:
-                    txt += "Temperatura\n";
-
-                    if (event.values[0]!=eventoAnt) {
-                        eventoAnt = event.values[0];
-                        txt += event.values[0] + " C \n";
-                        System.out.println(txt);
-                    }
-
-                    break;
             }
         }
     }

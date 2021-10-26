@@ -24,10 +24,16 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".PlacesPageActivity"
+            android:name=".PlacesToGoActivity"
             android:exported="false" />
         <activity
             android:name=".RequirementsByPlaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TemperatureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FinalActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

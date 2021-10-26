@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class PlacesPageActivity extends AppCompatActivity {
+public class PlacesToGoActivity extends AppCompatActivity {
 
     ListView listView;
     TextView textView;
@@ -31,7 +31,7 @@ public class PlacesPageActivity extends AppCompatActivity {
         textBienvenida.setText("¡Bienvenid@ " + userEmail.split("@")[0].trim() + "!");
 
         listView=(ListView)findViewById(R.id.listView);
-        textView=(TextView)findViewById(R.id.textView);
+        textView=(TextView)findViewById(R.id.textoBienvenida);
 
         listItem = getResources().getStringArray(R.array.lista_places);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,

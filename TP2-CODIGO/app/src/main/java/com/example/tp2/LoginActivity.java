@@ -39,8 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final EditText editTextEmail = findViewById(R.id.editTextTextPersonName);
-        final EditText editTextPassword = findViewById(R.id.editTextTextPassword);
+        final EditText editTextEmail = findViewById(R.id.user);
+        final EditText editTextPassword = findViewById(R.id.password);
         String TAG = "LoginActivity";
 
         Intent intent = getIntent();
@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             db.close();
 
-                            Intent intent = new Intent(getApplicationContext(), PlacesPageActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), PlacesToGoActivity.class);
                             intent.putExtra("useremail", user.getEmail());
                             startActivity(intent);
 

@@ -7,59 +7,69 @@
 
 
     <TextView
-        android:id="@+id/textoBienvenida"
+        android:id="@+id/textoTenesTodo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="61dp"
-        android:text="@string/bienvenido"
-        android:textColor="#5B9F57"
-        android:textSize="34sp"
-        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="500dp"
         android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/textoStart"
+        android:text="@string/leyenda_tenes_todo"
+        android:textColor="#5B9F57"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <TextView
-        android:id="@+id/textoStart"
+        android:id="@+id/textoShake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="521dp"
-        android:text="@string/ingresar_codigo"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="200dp"
+        android:gravity="center"
+        android:text="@string/leyenda_tempertura"
+        android:textColor="#5B9F57"
+        android:textSize="20sp"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoBienvenida" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.191" />
 
-    <EditText
-        android:id="@+id/codigo"
+    <TextView
+        android:id="@+id/textoTemperatura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="481dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoStart"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <Button
-        android:id="@+id/ingresarButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="335dp"
-        android:backgroundTint="#5B9F57"
-        android:text="@string/continuar"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="200dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#5B9F57"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.73" />
+
+    <Button
+        android:id="@+id/irButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="160dp"
+        android:backgroundTint="#5B9F57"
+        android:text="@string/ir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -79,4 +89,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
