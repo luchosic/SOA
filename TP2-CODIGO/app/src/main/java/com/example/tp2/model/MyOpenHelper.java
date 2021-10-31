@@ -1,4 +1,4 @@
-package com.example.tp2.db;
+package com.example.tp2.model;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

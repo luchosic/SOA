@@ -1,4 +1,4 @@
-package com.example.tp2;
+package com.example.tp2.presenter;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -7,11 +7,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.tp2.view.LoginActivity;
+import com.example.tp2.R;
 import com.example.tp2.data.SoaAPIErrorMessage;
 import com.example.tp2.data.SoaAPIResponse;
 import com.example.tp2.data.SoaAPIService;
 import com.example.tp2.data.User;
-import com.example.tp2.db.MyOpenHelper;
+import com.example.tp2.model.MyOpenHelper;
 import com.google.gson.Gson;
 
 import java.util.Date;
@@ -23,7 +25,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginPresenter {
-    private LoginActivity activity;
+    public LoginActivity activity;
 
     public LoginPresenter(LoginActivity activity) {
         this.activity = activity;

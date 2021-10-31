@@ -1,29 +1,27 @@
-package com.example.tp2;
+package com.example.tp2.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.tp2.presenter.LoginPresenter;
+import com.example.tp2.R;
+
 
 public class LoginActivity extends AppCompatActivity {
 
-    private LoginPresenter presenter;
+    public LoginPresenter presenter;
 
-    Button registroBtn;
-    Button loginButton;
-    EditText editTextEmail;
-    EditText editTextPassword;
-    String userEmail;
+    public Button registroBtn;
+    public Button loginButton;
+    public EditText editTextEmail;
+    public EditText editTextPassword;
+    public String userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,13 +63,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    protected void loginSuccessful() {
-        Intent intentContinuar = new Intent(getApplicationContext(), PlacesToGoActivity.class);
+    public void loginSuccessful() {
+        Intent intentContinuar = new Intent(getApplicationContext(), MainActivity.class);
         intentContinuar.putExtra("useremail", userEmail);
         startActivity(intentContinuar);
     }
 
-    protected void loginFailure(String error) {
+    public void loginFailure(String error) {
         System.out.println("entro a la funcion de fail");
         Toast.makeText(getApplicationContext(), "Hubo un error: " + error, Toast.LENGTH_LONG).show();
 

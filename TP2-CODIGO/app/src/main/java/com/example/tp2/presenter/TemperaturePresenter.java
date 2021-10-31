@@ -1,10 +1,12 @@
-package com.example.tp2;
+package com.example.tp2.presenter;
 
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+
+import com.example.tp2.view.TemperatureActivity;
 
 public class TemperaturePresenter implements SensorEventListener{
     private SensorManager sensorManager;

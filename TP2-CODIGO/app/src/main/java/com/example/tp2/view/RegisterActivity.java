@@ -1,24 +1,22 @@
-package com.example.tp2;
+package com.example.tp2.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tp2.R;
 import com.example.tp2.data.InternetConnection;
 import com.example.tp2.data.SoaAPIErrorMessage;
 import com.example.tp2.data.SoaAPIResponse;
 import com.example.tp2.data.SoaAPIService;
 import com.example.tp2.data.User;
 import com.example.tp2.data.UserValidate;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Toast;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;

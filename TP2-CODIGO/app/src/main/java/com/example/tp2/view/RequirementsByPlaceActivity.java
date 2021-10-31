@@ -1,4 +1,4 @@
-package com.example.tp2;
+package com.example.tp2.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tp2.presenter.RequirementsByPlacePresenter;
+import com.example.tp2.R;
 
 public class RequirementsByPlaceActivity extends AppCompatActivity{
 
@@ -17,8 +20,8 @@ public class RequirementsByPlaceActivity extends AppCompatActivity{
     TextView requirementsVuelosNacionales;
     TextView requirementsVuelosInternacionales;
     TextView textSelectedPlace;
-    Button volverBoton;
-    Button continueButton;
+    public Button volverBoton;
+    public Button continueButton;
 
     public int shakeDetected = 0;
 
@@ -81,7 +84,7 @@ public class RequirementsByPlaceActivity extends AppCompatActivity{
         volverBoton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentVolver = new Intent(getApplicationContext(), PlacesToGoActivity.class);
+                Intent intentVolver = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intentVolver);
             }
         });

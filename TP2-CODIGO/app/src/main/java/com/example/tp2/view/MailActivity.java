@@ -1,4 +1,4 @@
-package com.example.tp2;
+package com.example.tp2.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,19 +10,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.tp2.R;
 import com.example.tp2.data.Battery;
 import com.example.tp2.data.JavaMail;
 
-public class MainActivity extends AppCompatActivity {
+public class MailActivity extends AppCompatActivity {
 
-    EditText mailUser;
     public EditText mEmail;
     public String randomCode;
     Button codigoButton;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mail);
 
         mEmail = (EditText) findViewById(R.id.mailCodigo);
         codigoButton = (Button) findViewById(R.id.codigoButton);

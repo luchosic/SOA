@@ -15,28 +15,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".LoginActivity"
+            android:name=".view.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".AutenticationCodeActivity"
+            android:name=".view.AutenticationCodeActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".view.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".PlacesToGoActivity"
+            android:name=".view.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".RequirementsByPlaceActivity"
+            android:name=".view.RequirementsByPlaceActivity"
             android:exported="false" />
         <activity
-            android:name=".TemperatureActivity"
+            android:name=".view.TemperatureActivity"
             android:exported="false" />
         <activity
-            android:name=".FinalActivity"
+            android:name=".view.FinalActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MailActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

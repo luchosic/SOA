@@ -1,4 +1,4 @@
-package com.example.tp2;
+package com.example.tp2.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,13 +8,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tp2.presenter.TemperaturePresenter;
+import com.example.tp2.R;
+
 public class TemperatureActivity extends AppCompatActivity{
 
     private TemperaturePresenter presenter;
 
-    Button volverButton;
-    Button irButton;
-    TextView textoTemperatura;
+    public Button volverButton;
+    public Button irButton;
+    public TextView textoTemperatura;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

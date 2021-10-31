@@ -1,12 +1,10 @@
-package com.example.tp2;
+package com.example.tp2.view;
 
-import android.content.Intent;
-import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tp2.R;
 
 public class FinalActivity extends AppCompatActivity {
 
