@@ -51,6 +51,8 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText editTextEmail        = findViewById(R.id.mailRegistro);
         final EditText editTextPassword     = findViewById(R.id.passwordRegistro);
         final EditText editTextGrupo        = findViewById(R.id.grupoRegistro);
+        volverBtn = (Button)findViewById(R.id.volverButton);
+        registrateButtom = (Button)findViewById(R.id.registrateButtom);
 
         editTextEmail.setText(userEmail);
 
@@ -59,8 +61,6 @@ public class RegisterActivity extends AppCompatActivity {
         } else
             Log.e(TAG, "NOT Connected to Internet");
 
-        volverBtn = (Button)findViewById(R.id.volverButton);
-
         volverBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,8 +68,6 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        registrateButtom = (Button)findViewById(R.id.registrateButtom);
 
         registrateButtom.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,19 +155,10 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     });
 
-
-
                 } else {
                     Toast.makeText(getApplicationContext(), userValidate.getMsg(), Toast.LENGTH_LONG).show();
                 }
-
             }
         });
-
-
-
-
     }
-
-
 }

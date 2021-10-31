@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RequirementsByPlaceActivity extends AppCompatActivity{
 
-    private SensorAcelerometroPresenter presenter;
+    private RequirementsByPlacePresenter presenter;
 
     TextView requirementsTeatro;
     TextView requirementsCancha;
@@ -64,7 +64,7 @@ public class RequirementsByPlaceActivity extends AppCompatActivity{
             break;
         }
 
-        presenter = new SensorAcelerometroPresenter(this);
+        presenter = new RequirementsByPlacePresenter(this);
         presenter.setupSensorManager();
         presenter.startSensoring();
 

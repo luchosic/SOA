@@ -22,13 +22,13 @@ public class AutenticationCodeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_autentication_code);
 
         codigoIngresado = (EditText) findViewById(R.id.codigo);
+        volverButton = (Button)findViewById(R.id.volverButton);
+        coninueButton = (Button) findViewById(R.id.ingresarButton);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         String randomCode = extras.getString("randomCode");
         String userEmail = extras.getString("useremail");
-
-        coninueButton = (Button) findViewById(R.id.ingresarButton);
 
         coninueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,8 +44,6 @@ public class AutenticationCodeActivity extends AppCompatActivity {
                 }
             }
         });
-
-        volverButton = (Button)findViewById(R.id.volverButton);
 
         volverButton.setOnClickListener(new View.OnClickListener() {
             @Override

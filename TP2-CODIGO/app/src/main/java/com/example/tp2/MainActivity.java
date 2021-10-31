@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mEmail = (EditText) findViewById(R.id.mailCodigo);
-
         codigoButton = (Button) findViewById(R.id.codigoButton);
 
         Battery batStatus = new Battery(getApplicationContext());

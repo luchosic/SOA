@@ -7,11 +7,11 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
 
-public class SensorAcelerometroPresenter implements SensorEventListener{
+public class RequirementsByPlacePresenter implements SensorEventListener{
     private SensorManager sensorManager;
     private RequirementsByPlaceActivity activity;
 
-    public SensorAcelerometroPresenter(RequirementsByPlaceActivity activity) {
+    public RequirementsByPlacePresenter(RequirementsByPlaceActivity activity) {
         this.activity = activity;
     }
 

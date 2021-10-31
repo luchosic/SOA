@@ -41,9 +41,6 @@ public class LoginActivity extends AppCompatActivity {
 
         editTextEmail.setText(userEmail);
 
-        loginButton.setEnabled(true);
-        registroBtn.setEnabled(true);
-
         presenter = new LoginPresenter(this);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 presenter.loginEnServer();
 
+                //Deshabilito botones para que no pueda volver a clickear
                 loginButton.setEnabled(false);
                 registroBtn.setEnabled(false);
             }

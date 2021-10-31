@@ -20,18 +20,17 @@ public class PlacesToGoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_places_to_visit);
 
+        TextView textBienvenida;
+
+        textBienvenida = findViewById(R.id.textBienvenida);
+        listView=(ListView)findViewById(R.id.listView);
+        textView=(TextView)findViewById(R.id.textoBienvenida);
+
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         String userEmail = extras.getString("useremail");
 
-        TextView textBienvenida;
-
-        textBienvenida = findViewById(R.id.textBienvenida);
-
         textBienvenida.setText("¡Bienvenid@ " + userEmail.split("@")[0].trim() + "!");
-
-        listView=(ListView)findViewById(R.id.listView);
-        textView=(TextView)findViewById(R.id.textoBienvenida);
 
         listItem = getResources().getStringArray(R.array.lista_places);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -42,9 +41,6 @@ public class PlacesToGoActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 String selectedPlace=adapter.getItem(position);
-                //Toast.makeText(getApplicationContext(),value,Toast.LENGTH_SHORT).show();
-
-                System.out.println("valor tocado: " + selectedPlace);
 
                 Intent intentContinuar = new Intent(getApplicationContext(), RequirementsByPlaceActivity.class);
                 intentContinuar.putExtra("selectedPlace", selectedPlace);

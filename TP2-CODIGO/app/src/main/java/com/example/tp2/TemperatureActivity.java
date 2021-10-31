@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class TemperatureActivity extends AppCompatActivity{
 
-    private SensorTemperaturaPresenter presenter;
+    private TemperaturePresenter presenter;
 
     Button volverButton;
     Button irButton;
@@ -25,7 +25,7 @@ public class TemperatureActivity extends AppCompatActivity{
         irButton = findViewById(R.id.irButton);
         volverButton = (Button)findViewById(R.id.volverButton);
 
-        presenter = new SensorTemperaturaPresenter(this);
+        presenter = new TemperaturePresenter(this);
         presenter.setupSensorManager();
         presenter.startSensoring();
 

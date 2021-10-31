@@ -6,11 +6,11 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
-public class SensorTemperaturaPresenter implements SensorEventListener{
+public class TemperaturePresenter implements SensorEventListener{
     private SensorManager sensorManager;
     private TemperatureActivity activity;
 
-    public SensorTemperaturaPresenter(TemperatureActivity activity) {
+    public TemperaturePresenter(TemperatureActivity activity) {
         this.activity = activity;
     }
 
