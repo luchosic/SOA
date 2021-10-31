@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.tp2.model.DBLogin;
 import com.example.tp2.view.LoginActivity;
 import com.example.tp2.R;
 import com.example.tp2.data.SoaAPIErrorMessage;
@@ -35,6 +36,8 @@ public class LoginPresenter {
         User user = new User();
         String TAG = "LoginActivity";
 
+        DBLogin model = new DBLogin(activity, user);
+
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(activity.getString(R.string.retrofit_server))
@@ -52,37 +55,7 @@ public class LoginPresenter {
                 if (response.isSuccessful()) {
                     Log.i(TAG, response.body().toString());
 
-                    MyOpenHelper dbHelper = new MyOpenHelper(activity.getApplicationContext());
-                    SQLiteDatabase db = dbHelper.getWritableDatabase();
-
-                    if (db != null) {
-
-                        Date date1=java.util.Calendar.getInstance().getTime();
-
-                        ContentValues cv = new ContentValues();
-                        cv.put("username", user.getEmail());
-                        cv.put("date", String.valueOf(date1));
-                        db.insert("user_login", null, cv);
-
-                        //El siguiente codigo es para visualizar lo que se esta guardando en la base de datos.
-                        //Eliminarlo para entegar
-                        Cursor c = db.rawQuery("SELECT _id, username, date FROM user_login", null);
-
-                        if (c != null) {
-                            c.moveToFirst();
-                            do {
-                                //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
-                                @SuppressLint("Range") String user = c.getString(c.getColumnIndex("username"));
-                                @SuppressLint("Range") String date = c.getString(c.getColumnIndex("date"));
-                                System.out.println("Username: " + user + " DATE: " + date);
-                            } while (c.moveToNext());
-                        }
-
-                        //Cerramos el cursor y la conexion con la base de datos
-                        c.close();
-                    }
-
-                    db.close();
+                    model.insertInDB();
 
                     activity.loginSuccessful();
 
