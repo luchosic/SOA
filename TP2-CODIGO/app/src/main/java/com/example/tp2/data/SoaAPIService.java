@@ -1,5 +1,7 @@
 package com.example.tp2.data;
 
+import android.media.metrics.Event;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Header;
@@ -16,9 +18,9 @@ public interface SoaAPIService {
     @POST("api/login")
     Call<SoaAPIResponse> login(@Body User user);
 
-    //@Headers("Content-Type: application/json")
-    //@POST("api/event")
-    //Call<SoaAPIResponse> event(@Body Event event, @Header("Authorization") String token);
+    /*@Headers("Content-Type: application/json")
+    @POST("api/event")
+    Call<SoaAPIResponse> event(@Body Event event, @Header("Authorization") String token);*/
 
     @Headers("Content-Type: application/json")
     @PUT("api/refresh")
