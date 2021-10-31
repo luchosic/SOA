@@ -11,12 +11,17 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tp2.R;
+import com.example.tp2.presenter.LoginPresenter;
+import com.example.tp2.presenter.MainPresenter;
 
 public class MainActivity extends AppCompatActivity {
+
+    public MainPresenter presenter;
 
     ListView listView;
     TextView textView;
     String[] listItem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
         textBienvenida.setText("¡Bienvenid@ " + userEmail.split("@")[0].trim() + "!");
 
+        presenter = new MainPresenter(this);
+
         listItem = getResources().getStringArray(R.array.lista_places);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, listItem);
@@ -43,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 String selectedPlace=adapter.getItem(position);
+
+                presenter.storePlace(selectedPlace);
 
                 Intent intentContinuar = new Intent(getApplicationContext(), RequirementsByPlaceActivity.class);
                 intentContinuar.putExtra("selectedPlace", selectedPlace);

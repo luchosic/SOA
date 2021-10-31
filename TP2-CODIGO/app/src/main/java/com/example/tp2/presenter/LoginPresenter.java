@@ -1,23 +1,16 @@
 package com.example.tp2.presenter;
 
-import android.annotation.SuppressLint;
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.tp2.model.DBLogin;
+import com.example.tp2.model.DBInsertLogin;
 import com.example.tp2.view.LoginActivity;
 import com.example.tp2.R;
 import com.example.tp2.data.SoaAPIErrorMessage;
 import com.example.tp2.data.SoaAPIResponse;
 import com.example.tp2.data.SoaAPIService;
 import com.example.tp2.data.User;
-import com.example.tp2.model.MyOpenHelper;
 import com.google.gson.Gson;
-
-import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,7 +29,7 @@ public class LoginPresenter {
         User user = new User();
         String TAG = "LoginActivity";
 
-        DBLogin model = new DBLogin(activity, user);
+        DBInsertLogin model = new DBInsertLogin(activity, user);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())

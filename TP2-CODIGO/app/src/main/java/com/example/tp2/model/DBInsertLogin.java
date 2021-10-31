@@ -6,17 +6,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.tp2.data.User;
-import com.example.tp2.presenter.LoginPresenter;
 import com.example.tp2.view.LoginActivity;
 
 import java.util.Date;
 
-public class DBLogin {
+public class DBInsertLogin {
 
     public LoginActivity activity;
     public User user;
 
-    public DBLogin(LoginActivity activity, User user) {
+    public DBInsertLogin(LoginActivity activity, User user) {
         this.activity = activity;
         this.user = user;
     }
