@@ -12,7 +12,7 @@
     <string name="seleccione_lugar">Seleccione el lugar que desea visitar para conocer sus requisitos:</string>
     <string name="leyenda_lugar">Usted ha seleccionado: </string>
     <string name="leyenda_requisitos">Requisitos para ingresar: </string>
-    <string name="leyenda_continuar">Si cumple con todos los requisitos, presione continuar</string>
+    <string name="leyenda_continuar">Si cumplis con todos los requisitos, agitá tu celu y presioná continuar</string>
     <string name="leyenda_tenes_todo">Genial! Ya tenes todo lo que necesitas? </string>
     <string name="leyenda_tempertura">Ahora vamos a tomar la temperatura del ambiente.
                 Solo es recomendable salir de tu casa si la temperatura es mayor a 20°C,
