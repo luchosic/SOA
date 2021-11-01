@@ -1,30 +1,33 @@
 package com.example.tp2.data;
 
-import java.util.Date;
-
 public class UserConexionMetric {
-    Date date;
-    Integer cantidadLogueos;
+    String franja;
+    String cantidadLogueos;
 
 
     public UserConexionMetric() {
 
     }
 
-
-    public Date getDate() {
-        return date;
+    public UserConexionMetric(String franja, String cantidadLogueos) {
+        this.franja = franja;
+        this.cantidadLogueos = cantidadLogueos;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public String getFranja() {
+        return franja;
     }
 
-    public Integer getCantidadLogueos() {
+    public void setFranja(String franja) {
+        this.franja = franja;
+    }
+
+    public String getCantidadLogueos() {
         return cantidadLogueos;
     }
 
-    public void setCantidadLogueos(Integer cantidadLogueos) {
+    public void setCantidadLogueos(String cantidadLogueos) {
         this.cantidadLogueos = cantidadLogueos;
     }
+
 }

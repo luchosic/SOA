@@ -21,9 +21,7 @@ public class MetricsPresenter {
     public ArrayList<UserConexionMetric> getUserConexionMetric(){
         DBMetrics model = new DBMetrics(activity);
 
-        ArrayList<UserConexionMetric> userConexionMetric = new ArrayList<UserConexionMetric>();
-
-        return userConexionMetric;
+        return model.calculateUserConexion();
     }
 
     public ArrayList<PlaceMostVisitedMetric> getPlaceMostVisitedMetric(){

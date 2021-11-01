@@ -1,29 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:tools="http://schemas.android.com/tools"    android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <TextView
         android:id="@+id/cantidad_logueos"
-        android:layout_width="387dp"
-        android:layout_height="61dp"
+        android:layout_width="382dp"
+        android:layout_height="37dp"
         android:text="@string/cantidad_logueos"
         android:textColor="#5B9F57"
         android:textSize="20sp"
         android:textStyle="normal"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="69dp" />
-
+    <TextView
+        android:id="@+id/metricaLogueos"
+        android:layout_width="381dp"
+        android:layout_height="203dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#5B9F57"
+        android:textSize="22sp"
+        android:textStyle="normal"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="119dp" />
     <TextView
         android:id="@+id/cantidad_visitas"
-        android:layout_width="387dp"
-        android:layout_height="61dp"
+        android:layout_width="321dp"
+        android:layout_height="39dp"
         android:text="@string/cantidad_visitas"
         android:textColor="#5B9F57"
         android:textSize="20sp"
         android:textStyle="normal"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="386dp" />
-
+        tools:layout_editor_absoluteY="332dp" />
+    <TextView
+        android:id="@+id/metricaLugares"
+        android:layout_width="378dp"
+        android:layout_height="217dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#5B9F57"
+        android:textSize="22sp"
+        android:textStyle="normal"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="379dp" />
+    <Button
+        android:id="@+id/volverButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#5B9F57"
+        android:text="Volver"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="619dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,11 +30,10 @@ public class DBInsertLogin {
 
         if (db != null) {
             Calendar calendar = GregorianCalendar.getInstance(TimeZone.getTimeZone("GMT-3"));
-            calendar.get(Calendar.HOUR_OF_DAY);
 
             ContentValues cv = new ContentValues();
             cv.put("username", user.getEmail());
-            cv.put("hora", String.valueOf(calendar));
+            cv.put("hora", calendar.get(Calendar.HOUR_OF_DAY));
             db.insert("user_login", null, cv);
         }
 
