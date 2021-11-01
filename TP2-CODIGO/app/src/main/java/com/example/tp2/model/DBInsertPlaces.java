@@ -33,21 +33,6 @@ public class DBInsertPlaces {
             cv.put("place", place);
             db.insert("places_visited", null, cv);
 
-            //El siguiente codigo es para visualizar lo que se esta guardando en la base de datos.
-            //Eliminarlo para entegar
-            Cursor c = db.rawQuery("SELECT _id, place FROM places_visited", null);
-
-            if (c != null) {
-                c.moveToFirst();
-                do {
-                    //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
-                    @SuppressLint("Range") String place = c.getString(c.getColumnIndex("place"));
-                    System.out.println("Place: " + place);
-                } while (c.moveToNext());
-            }
-
-            //Cerramos el cursor y la conexion con la base de datos
-            c.close();
         }
 
         db.close();
