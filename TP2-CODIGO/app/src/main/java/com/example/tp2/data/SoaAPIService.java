@@ -18,9 +18,9 @@ public interface SoaAPIService {
     @POST("api/login")
     Call<SoaAPIResponse> login(@Body User user);
 
-    /*@Headers("Content-Type: application/json")
+    @Headers("Content-Type: application/json")
     @POST("api/event")
-    Call<SoaAPIResponse> event(@Body Event event, @Header("Authorization") String token);*/
+    Call<SoaAPIResponse> event(@Body Event event, @Header("Authorization") String token);
 
     @Headers("Content-Type: application/json")
     @PUT("api/refresh")
