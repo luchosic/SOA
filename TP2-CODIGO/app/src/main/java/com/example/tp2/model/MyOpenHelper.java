@@ -15,7 +15,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE user_login(_id INTEGER PRIMARY KEY AUTOINCREMENT, username STRING, date DATETIME)");
+        db.execSQL("CREATE TABLE user_login(_id INTEGER PRIMARY KEY AUTOINCREMENT, username STRING, hora INTEGER)");
         db.execSQL("CREATE TABLE places_visited(_id INTEGER PRIMARY KEY AUTOINCREMENT, place STRING)");
     }
 

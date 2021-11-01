@@ -13,7 +13,6 @@ public class MainPresenter {
 
     public void storePlace(String selectedPlace) {
         DBInsertPlaces model = new DBInsertPlaces(activity, selectedPlace);
-        System.out.println("lugar: " + selectedPlace);
         model.insertInDB();
     }
 

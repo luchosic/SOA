@@ -2,9 +2,11 @@ package com.example.tp2.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     TextView textView;
     String[] listItem;
+    Button metricasBoton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         textBienvenida = findViewById(R.id.textBienvenida);
         listView=(ListView)findViewById(R.id.listView);
         textView=(TextView)findViewById(R.id.textoBienvenida);
+        metricasBoton = (Button) findViewById(R.id.metricasBoton);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -59,5 +63,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        metricasBoton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MetricsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 }

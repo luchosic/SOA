@@ -27,6 +27,9 @@
             android:name=".view.MainActivity"
             android:exported="false" />
         <activity
+            android:name=".view.MetricsActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.RequirementsByPlaceActivity"
             android:exported="false" />
         <activity

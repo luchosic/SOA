@@ -27,12 +27,9 @@ public class DBInsertPlaces {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         if (db != null) {
-            System.out.println("lugar en el insert: " + place);
-
             ContentValues cv = new ContentValues();
             cv.put("place", place);
             db.insert("places_visited", null, cv);
-
         }
 
         db.close();

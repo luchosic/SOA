@@ -10,6 +10,9 @@
     <string name="ingresar_codigo">Ingrese el código que le llegó al mail</string>
     <string name="continuar">Continuar</string>
     <string name="seleccione_lugar">Seleccione el lugar que desea visitar para conocer sus requisitos:</string>
+    <string name="ver_metricas">Ver métricas</string>
+    <string name="cantidad_logueos">Cantidad de logueos por franja horaria:</string>
+    <string name="cantidad_visitas">Cantidad de visitas a cada lugar:</string>
     <string name="leyenda_lugar">Usted ha seleccionado: </string>
     <string name="leyenda_requisitos">Requisitos para ingresar: </string>
     <string name="leyenda_continuar">Si cumplis con todos los requisitos, agitá tu celu y presioná continuar</string>

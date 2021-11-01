@@ -8,7 +8,10 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.tp2.data.User;
 import com.example.tp2.view.LoginActivity;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 public class DBInsertLogin {
 
@@ -26,11 +29,12 @@ public class DBInsertLogin {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         if (db != null) {
-            Date date1 = java.util.Calendar.getInstance().getTime();
+            Calendar calendar = GregorianCalendar.getInstance(TimeZone.getTimeZone("GMT-3"));
+            calendar.get(Calendar.HOUR_OF_DAY);
 
             ContentValues cv = new ContentValues();
             cv.put("username", user.getEmail());
-            cv.put("date", String.valueOf(date1));
+            cv.put("hora", String.valueOf(calendar));
             db.insert("user_login", null, cv);
         }
 
