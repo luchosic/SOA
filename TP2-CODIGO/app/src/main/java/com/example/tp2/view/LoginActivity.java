@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         registroBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
                 intent.putExtra("useremail", userEmail);
                 startActivity(intent);
             }

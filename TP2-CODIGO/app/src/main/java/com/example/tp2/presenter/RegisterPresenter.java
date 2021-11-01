@@ -38,11 +38,25 @@ public class RegisterPresenter {
         user.setEnv(activity.getString(R.string.APIEnvoriment));
         user.setName(activity.editTextNombre.getText().toString());
         user.setLastname(activity.editTextApellido.getText().toString());
-        user.setDni(Long.parseLong(activity.editTextDNI.getText().toString()));
-        user.setCommission(Long.parseLong(activity.editTextCommission.getText().toString()));
         user.setEmail(activity.editTextEmail.getText().toString());
         user.setPassword(activity.editTextPassword.getText().toString());
-        user.setGroup(Integer.parseInt(activity.editTextGrupo.getText().toString()));
+
+        if(activity.editTextDNI.getText().toString().isEmpty())
+            user.setDni(Long.parseLong("0"));
+        else
+            user.setDni(Long.parseLong(activity.editTextDNI.getText().toString()));
+
+        if(activity.editTextCommission.getText().toString().isEmpty())
+            user.setCommission(Long.parseLong("0"));
+        else
+            user.setCommission(Long.parseLong(activity.editTextCommission.getText().toString()));
+
+        if(activity.editTextGrupo.getText().toString().isEmpty())
+            user.setGroup(Integer.parseInt("0"));
+        else
+            user.setGroup(Integer.parseInt(activity.editTextGrupo.getText().toString()));
+
+
 
         //validamos el usuario en cuestión
         UserValidate userValidate = user.validate();
@@ -88,10 +102,6 @@ public class RegisterPresenter {
 
                     }
                     Log.i(TAG, "Mensaje finalizado");
-                    //Apago el loader
-                    //loadingProgressBar.setVisibility(View.INVISIBLE);
-                    //Habilito el botón nuevamente
-                    //btnRegister.setEnabled(true);
                 }
 
                 @Override

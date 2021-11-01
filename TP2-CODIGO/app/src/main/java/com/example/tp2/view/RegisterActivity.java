@@ -69,10 +69,10 @@ public class RegisterActivity extends AppCompatActivity {
         registrateButtom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.registerUser();
-
-                //Deshabilito botones para que no pueda volver a clickear
+                //Deshabilito boton para que no pueda volver a clickear
                 registrateButtom.setEnabled(false);
+
+                presenter.registerUser();
             }
         });
 
@@ -80,7 +80,7 @@ public class RegisterActivity extends AppCompatActivity {
         volverBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -100,7 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         System.out.println("llego a la falla");
 
-        //Habilito los botones nuevamente para que pueda intentar loguearse
+        //Habilito el boton nuevamente para que pueda intentar registrarse
         registrateButtom.setEnabled(true);
 
     }
