@@ -70,7 +70,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void loginFailure(String error) {
-        System.out.println("entro a la funcion de fail");
         Toast.makeText(getApplicationContext(), "Hubo un error: " + error, Toast.LENGTH_LONG).show();
 
         //Habilito los botones nuevamente para que pueda intentar loguearse

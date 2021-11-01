@@ -57,7 +57,6 @@ public class LoginPresenter {
                     //Parseo la respuesta para poder mostrarla en la app
                     Gson gson = new Gson();
                     SoaAPIErrorMessage error = gson.fromJson(response.errorBody().charStream(), SoaAPIErrorMessage.class);
-                    //Toast.makeText(activity.getApplicationContext(), "Hubo un error: " + error.getMsg(), Toast.LENGTH_LONG).show();
                     Log.e(TAG, response.errorBody().toString());
                     activity.loginFailure(error.getMsg());
 
@@ -66,11 +65,8 @@ public class LoginPresenter {
 
             @Override
             public void onFailure(Call<SoaAPIResponse> call, Throwable t) {
-                Toast.makeText(activity.getApplicationContext(), "Parece que el servidor no esta funcionando. Intente nuevamente.", Toast.LENGTH_LONG).show();
+                activity.loginFailure("Parece que el servidor no esta funcionando. Intente nuevamente.");
                 Log.e(TAG, t.getMessage().toString());
-                //Habilito el botón
-                activity.loginButton.setEnabled(true);
-                activity.registroBtn.setEnabled(true);
             }
         });
     }

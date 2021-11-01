@@ -16,6 +16,7 @@
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/metricaLogueos"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.724"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,8 +30,8 @@
         android:layout_marginBottom="10dp"
         android:gravity="center"
         android:text=""
-        android:textColor="#5B9F57"
-        android:textSize="22sp"
+        android:textColor="#F5F6ED"
+        android:textSize="16sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/cantidad_visitas"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +50,7 @@
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/metricaLugares"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.277"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/metricaLogueos" />
 
@@ -62,8 +64,8 @@
         android:layout_marginBottom="12dp"
         android:gravity="center"
         android:text=""
-        android:textColor="#5B9F57"
-        android:textSize="22sp"
+        android:textColor="#E7F4E7"
+        android:textSize="16sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/volverButton"
         app:layout_constraintEnd_toEndOf="parent"
