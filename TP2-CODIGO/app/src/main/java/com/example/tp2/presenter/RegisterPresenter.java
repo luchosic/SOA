@@ -63,53 +63,59 @@ public class RegisterPresenter {
 
         if (userValidate.isSuccess()) {
 
-            //iniciamos la conexión con el server
-            Retrofit retrofit = new Retrofit.Builder()
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl(activity.getString(R.string.retrofit_server))
-                    .build();
+            if(InternetConnection.isOnline(activity)) {
 
-            SoaAPIService soaService = retrofit.create(SoaAPIService.class);
+                //iniciamos la conexión con el server
+                Retrofit retrofit = new Retrofit.Builder()
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .baseUrl(activity.getString(R.string.retrofit_server))
+                        .build();
 
-            Call<SoaAPIResponse> call = soaService.register(user);
-            call.enqueue(new Callback<SoaAPIResponse>() {
-                @Override
-                public void onResponse(Call<SoaAPIResponse> call, Response<SoaAPIResponse> response) {
-                    if (response.isSuccessful()) {
+                SoaAPIService soaService = retrofit.create(SoaAPIService.class);
 
-                        //Limpio los input
-                        activity.editTextNombre.setText("");
-                        activity.editTextApellido.setText("");
-                        activity.editTextDNI.setText("");
-                        activity.editTextCommission.setText("");
-                        activity.editTextEmail.setText("");
-                        activity.editTextPassword.setText("");
+                Call<SoaAPIResponse> call = soaService.register(user);
+                call.enqueue(new Callback<SoaAPIResponse>() {
+                    @Override
+                    public void onResponse(Call<SoaAPIResponse> call, Response<SoaAPIResponse> response) {
+                        if (response.isSuccessful()) {
 
-                        //Guardo los tokens en el sharedPreferences
-                        //sessionManager.storeTokens(response.body().getToken(), response.body().getToken_refresh());
-                        //sessionManager.storeEmail(editTextEmail.getText().toString());
+                            //Limpio los input
+                            activity.editTextNombre.setText("");
+                            activity.editTextApellido.setText("");
+                            activity.editTextDNI.setText("");
+                            activity.editTextCommission.setText("");
+                            activity.editTextEmail.setText("");
+                            activity.editTextPassword.setText("");
 
-                        Log.i(TAG, response.body().toString());
+                            //Guardo los tokens en el sharedPreferences
+                            //sessionManager.storeTokens(response.body().getToken(), response.body().getToken_refresh());
+                            //sessionManager.storeEmail(editTextEmail.getText().toString());
 
-                        activity.registerSuccessful();
+                            Log.i(TAG, response.body().toString());
 
-                    } else {
-                        //Parseo la respuesta para poder mostrarla en la app
-                        Gson gson = new Gson();
-                        SoaAPIErrorMessage error = gson.fromJson(response.errorBody().charStream(), SoaAPIErrorMessage.class);
-                        Log.e(TAG, response.errorBody().toString());
-                        activity.registerFailure(error.getMsg());
+                            activity.registerSuccessful();
 
+                        } else {
+                            //Parseo la respuesta para poder mostrarla en la app
+                            Gson gson = new Gson();
+                            SoaAPIErrorMessage error = gson.fromJson(response.errorBody().charStream(), SoaAPIErrorMessage.class);
+                            Log.e(TAG, response.errorBody().toString());
+                            activity.registerFailure(error.getMsg());
+
+                        }
+                        Log.i(TAG, "Mensaje finalizado");
                     }
-                    Log.i(TAG, "Mensaje finalizado");
-                }
 
-                @Override
-                public void onFailure(Call<SoaAPIResponse> call, Throwable t) {
-                    activity.registerFailure("Parece que hubo un problema en el servidor, intentelo nuevamente.");
-                    Log.e(TAG, t.getMessage().toString());
-                }
-            });
+                    @Override
+                    public void onFailure(Call<SoaAPIResponse> call, Throwable t) {
+                        activity.registerFailure("Parece que hubo un problema en el servidor, intentelo nuevamente.");
+                        Log.e(TAG, t.getMessage().toString());
+                    }
+                });
+
+            }else {
+                activity.registerFailure("No hay conexión a internet.");
+            }
 
         } else {
             activity.registerFailure(userValidate.getMsg());

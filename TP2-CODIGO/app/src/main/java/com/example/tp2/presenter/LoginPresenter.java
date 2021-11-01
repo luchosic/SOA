@@ -3,6 +3,7 @@ package com.example.tp2.presenter;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.tp2.data.InternetConnection;
 import com.example.tp2.model.DBInsertLogin;
 import com.example.tp2.view.LoginActivity;
 import com.example.tp2.R;
@@ -25,50 +26,55 @@ public class LoginPresenter {
         this.activity = activity;
     }
 
-    public void loginEnServer (){
+    public void loginEnServer () {
         User user = new User();
         String TAG = "LoginActivity";
 
         DBInsertLogin model = new DBInsertLogin(activity, user);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(activity.getString(R.string.retrofit_server))
-                .build();
+        if (InternetConnection.isOnline(activity)) {
 
-        SoaAPIService soaAPIService = retrofit.create(SoaAPIService.class);
+            Retrofit retrofit = new Retrofit.Builder()
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .baseUrl(activity.getString(R.string.retrofit_server))
+                    .build();
 
-        user.setEmail(activity.editTextEmail.getText().toString());
-        user.setPassword(activity.editTextPassword.getText().toString());
+            SoaAPIService soaAPIService = retrofit.create(SoaAPIService.class);
 
-        Call<SoaAPIResponse> call = soaAPIService.login(user);
-        call.enqueue(new Callback<SoaAPIResponse>() {
-            @Override
-            public void onResponse(Call<SoaAPIResponse> call, Response<SoaAPIResponse> response) {
-                if (response.isSuccessful()) {
-                    Log.i(TAG, response.body().toString());
+            user.setEmail(activity.editTextEmail.getText().toString());
+            user.setPassword(activity.editTextPassword.getText().toString());
 
-                    model.insertInDB();
+            Call<SoaAPIResponse> call = soaAPIService.login(user);
+            call.enqueue(new Callback<SoaAPIResponse>() {
+                @Override
+                public void onResponse(Call<SoaAPIResponse> call, Response<SoaAPIResponse> response) {
+                    if (response.isSuccessful()) {
+                        Log.i(TAG, response.body().toString());
 
-                    activity.loginSuccessful();
+                        model.insertInDB();
+
+                        activity.loginSuccessful();
 
 
-                } else {
-                    //Parseo la respuesta para poder mostrarla en la app
-                    Gson gson = new Gson();
-                    SoaAPIErrorMessage error = gson.fromJson(response.errorBody().charStream(), SoaAPIErrorMessage.class);
-                    Log.e(TAG, response.errorBody().toString());
-                    activity.loginFailure(error.getMsg());
+                    } else {
+                        //Parseo la respuesta para poder mostrarla en la app
+                        Gson gson = new Gson();
+                        SoaAPIErrorMessage error = gson.fromJson(response.errorBody().charStream(), SoaAPIErrorMessage.class);
+                        Log.e(TAG, response.errorBody().toString());
+                        activity.loginFailure(error.getMsg());
 
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<SoaAPIResponse> call, Throwable t) {
-                activity.loginFailure("Parece que el servidor no esta funcionando. Intente nuevamente.");
-                Log.e(TAG, t.getMessage().toString());
-            }
-        });
+                @Override
+                public void onFailure(Call<SoaAPIResponse> call, Throwable t) {
+                    activity.loginFailure("Parece que el servidor no esta funcionando. Intente nuevamente.");
+                    Log.e(TAG, t.getMessage().toString());
+                }
+            });
+        }else{
+            activity.loginFailure("No hay conexión a internet");
+        }
     }
 
 }
