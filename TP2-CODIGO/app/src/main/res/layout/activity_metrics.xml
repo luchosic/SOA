@@ -1,54 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:tools="http://schemas.android.com/tools"    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/cantidad_logueos"
         android:layout_width="382dp"
         android:layout_height="37dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginBottom="13dp"
         android:text="@string/cantidad_logueos"
         android:textColor="#5B9F57"
         android:textSize="20sp"
         android:textStyle="normal"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="69dp" />
+        app:layout_constraintBottom_toTopOf="@+id/metricaLogueos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/metricaLogueos"
         android:layout_width="381dp"
         android:layout_height="203dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:text=""
         android:textColor="#5B9F57"
         android:textSize="22sp"
         android:textStyle="normal"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="119dp" />
+        app:layout_constraintBottom_toTopOf="@+id/cantidad_visitas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cantidad_logueos" />
+
     <TextView
         android:id="@+id/cantidad_visitas"
         android:layout_width="321dp"
         android:layout_height="39dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="2dp"
         android:text="@string/cantidad_visitas"
         android:textColor="#5B9F57"
         android:textSize="20sp"
         android:textStyle="normal"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="332dp" />
+        app:layout_constraintBottom_toTopOf="@+id/metricaLugares"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metricaLogueos" />
+
     <TextView
         android:id="@+id/metricaLugares"
         android:layout_width="378dp"
         android:layout_height="217dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="12dp"
         android:gravity="center"
         android:text=""
         android:textColor="#5B9F57"
         android:textSize="22sp"
         android:textStyle="normal"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="379dp" />
+        app:layout_constraintBottom_toTopOf="@+id/volverButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cantidad_visitas" />
+
     <Button
         android:id="@+id/volverButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginLeft="161dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginRight="144dp"
+        android:layout_marginBottom="162dp"
         android:backgroundTint="#5B9F57"
         android:text="Volver"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="619dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metricaLugares" />
 </androidx.constraintlayout.widget.ConstraintLayout>

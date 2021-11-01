@@ -32,14 +32,16 @@ public class MetricsActivity extends AppCompatActivity {
         TextView placesMostVisited = findViewById(R.id.metricaLugares);;
         presenter = new MetricsPresenter(this);
 
-        loguinByHour.setText("METRICAS");
-        placesMostVisited.setText("aca van las metricas por lugar");
-
         userConexionMetric = presenter.getUserConexionMetric();
 
         for(UserConexionMetric valores : userConexionMetric){
             System.out.println("Franja: " + valores.getFranja() + " Cantidad de logueos: " + valores.getCantidadLogueos());
         }
+
+        loguinByHour.setText(userConexionMetric.toString());
+        placesMostVisited.setText("aca van las metricas por lugar");
+
+
 
         volverBoton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -30,4 +30,9 @@ public class UserConexionMetric {
         this.cantidadLogueos = cantidadLogueos;
     }
 
+    @Override
+    public String toString() {
+        return franja + ":  " + cantidadLogueos + " logueos" + "\n";
+    }
+
 }
