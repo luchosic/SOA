@@ -27,8 +27,6 @@ public class MetricsPresenter {
     public ArrayList<PlaceMostVisitedMetric> getPlaceMostVisitedMetric(){
         DBMetrics model = new DBMetrics(activity);
 
-        ArrayList<PlaceMostVisitedMetric> placeMostVisitedMetric = new ArrayList<PlaceMostVisitedMetric>();
-
-        return placeMostVisitedMetric;
+        return model.calculatePlaceMostVisited();
     }
 }

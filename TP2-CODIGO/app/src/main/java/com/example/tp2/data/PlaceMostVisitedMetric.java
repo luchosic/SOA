@@ -7,6 +7,11 @@ public class PlaceMostVisitedMetric {
     public PlaceMostVisitedMetric() {
     }
 
+    public PlaceMostVisitedMetric(String place, Integer cantidad) {
+        this.place = place;
+        this.cantidad = cantidad;
+    }
+
     public String getPlace() {
         return place;
     }
@@ -21,5 +26,10 @@ public class PlaceMostVisitedMetric {
 
     public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
+    }
+
+    @Override
+    public String toString() {
+        return place + ":  " + cantidad + " visitas" + "\n";
     }
 }

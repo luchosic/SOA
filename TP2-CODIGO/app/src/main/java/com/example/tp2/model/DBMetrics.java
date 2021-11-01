@@ -56,7 +56,17 @@ public class DBMetrics {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         if (db != null) {
+            Cursor cursorPlacesVisited = db.rawQuery("select place, count(*) as Resultado from places_visited group by place order by Resultado desc;", null);
 
+            if (cursorPlacesVisited.moveToFirst()) {
+                do {
+                    placeMostVisitedMetric.add(new PlaceMostVisitedMetric(
+                            cursorPlacesVisited.getString(0),
+                            Integer.parseInt(cursorPlacesVisited.getString(1))));
+                } while (cursorPlacesVisited.moveToNext());
+            }
+
+            cursorPlacesVisited.close();
         }
 
         db.close();

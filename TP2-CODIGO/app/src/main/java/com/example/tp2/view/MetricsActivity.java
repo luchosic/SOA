@@ -19,7 +19,6 @@ import java.util.ArrayList;
 public class MetricsActivity extends AppCompatActivity {
 
     public MetricsPresenter presenter;
-    public ArrayList<UserConexionMetric> userConexionMetric;
     public Button volverBoton;
 
     @Override
@@ -29,19 +28,11 @@ public class MetricsActivity extends AppCompatActivity {
 
         volverBoton = findViewById(R.id.volverButton);
         TextView loguinByHour = findViewById(R.id.metricaLogueos);
-        TextView placesMostVisited = findViewById(R.id.metricaLugares);;
+        TextView placesMostVisited = findViewById(R.id.metricaLugares);
         presenter = new MetricsPresenter(this);
 
-        userConexionMetric = presenter.getUserConexionMetric();
-
-        for(UserConexionMetric valores : userConexionMetric){
-            System.out.println("Franja: " + valores.getFranja() + " Cantidad de logueos: " + valores.getCantidadLogueos());
-        }
-
-        loguinByHour.setText(userConexionMetric.toString());
-        placesMostVisited.setText("aca van las metricas por lugar");
-
-
+        loguinByHour.setText(presenter.getUserConexionMetric().toString());
+        placesMostVisited.setText(presenter.getPlaceMostVisitedMetric().toString());
 
         volverBoton.setOnClickListener(new View.OnClickListener() {
             @Override
