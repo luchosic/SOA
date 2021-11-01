@@ -29,6 +29,11 @@ public class MetricsActivity extends AppCompatActivity {
         volverBoton = findViewById(R.id.volverButton);
         TextView loguinByHour = findViewById(R.id.metricaLogueos);
         TextView placesMostVisited = findViewById(R.id.metricaLugares);
+
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        String userEmail = extras.getString("useremail");
+
         presenter = new MetricsPresenter(this);
 
         loguinByHour.setText(presenter.getUserConexionMetric().toString());
@@ -38,6 +43,7 @@ public class MetricsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentVolver = new Intent(getApplicationContext(), MainActivity.class);
+                intentVolver.putExtra("useremail", userEmail);
                 startActivity(intentVolver);
             }
         });

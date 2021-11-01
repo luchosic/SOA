@@ -81,6 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.putExtra("useremail", userEmail);
                 startActivity(intent);
             }
         });

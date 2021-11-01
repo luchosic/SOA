@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void loginSuccessful() {
         Intent intentContinuar = new Intent(getApplicationContext(), MainActivity.class);
-        intentContinuar.putExtra("useremail", userEmail);
+        intentContinuar.putExtra("useremail", userEmail.split("@")[0].trim());
         startActivity(intentContinuar);
     }
 

@@ -23,17 +23,15 @@ public class RequirementsByPlaceActivity extends AppCompatActivity{
     public Button volverBoton;
     public Button continueButton;
 
-    public int shakeDetected = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requirements_by_place);
 
-
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         String selectedPlace = extras.getString("selectedPlace");
+        String userEmail = extras.getString("useremail");
 
         textSelectedPlace = findViewById(R.id.selectedPlace);
         requirementsTeatro = findViewById(R.id.requisitosTeatro);
@@ -71,12 +69,12 @@ public class RequirementsByPlaceActivity extends AppCompatActivity{
         presenter.setupSensorManager();
         presenter.startSensoring();
 
-        //continueButton.setEnabled(false); //Lo activa el Presenter
-
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentContinuar = new Intent(getApplicationContext(), TemperatureActivity.class);
+                intentContinuar.putExtra("selectedPlace", selectedPlace);
+                intentContinuar.putExtra("useremail", userEmail);
                 startActivity(intentContinuar);
             }
         });
@@ -85,6 +83,7 @@ public class RequirementsByPlaceActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intentVolver = new Intent(getApplicationContext(), MainActivity.class);
+                intentVolver.putExtra("useremail", userEmail);
                 startActivity(intentVolver);
             }
         });

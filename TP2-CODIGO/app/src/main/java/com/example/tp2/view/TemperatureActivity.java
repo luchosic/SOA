@@ -28,6 +28,11 @@ public class TemperatureActivity extends AppCompatActivity{
         irButton = findViewById(R.id.irButton);
         volverButton = (Button)findViewById(R.id.volverButton);
 
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        String selectedPlace = extras.getString("selectedPlace");
+        String userEmail = extras.getString("useremail");
+
         presenter = new TemperaturePresenter(this);
         presenter.setupSensorManager();
         presenter.startSensoring();
@@ -38,6 +43,7 @@ public class TemperatureActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intentContinuar = new Intent(getApplicationContext(), FinalActivity.class);
+                intentContinuar.putExtra("useremail", userEmail);
                 startActivity(intentContinuar);
             }
         });
@@ -46,6 +52,8 @@ public class TemperatureActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intentVolver = new Intent(getApplicationContext(), RequirementsByPlaceActivity.class);
+                intentVolver.putExtra("selectedPlace", selectedPlace);
+                intentVolver.putExtra("useremail", userEmail);
                 startActivity(intentVolver);
             }
         });

@@ -22,6 +22,7 @@
                 ya que el virus se propaga más lentamente en verano</string>
     <string name="leyenda_final">Todo listo! Disfruta tu actividad, y recorda que cuidandote, nos cuidas a todos</string>
     <string name="leyenda_gracias">Gracias por utilizar CovidLess</string>
+    <string name="volver_main">Menú Principal</string>
     <string name="ir">Ir</string>
     <string name="APIEnvoriment">PROD</string>
     <string name="retrofit_server">http://so-unlam.net.ar/api/</string>

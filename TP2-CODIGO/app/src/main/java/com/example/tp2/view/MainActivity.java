@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         String userEmail = extras.getString("useremail");
 
-        textBienvenida.setText("¡Bienvenid@ " + userEmail.split("@")[0].trim() + "!");
+        textBienvenida.setText("¡Bienvenid@ " + userEmail + "!");
 
         presenter = new MainPresenter(this);
 
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intentContinuar = new Intent(getApplicationContext(), RequirementsByPlaceActivity.class);
                 intentContinuar.putExtra("selectedPlace", selectedPlace);
+                intentContinuar.putExtra("useremail", userEmail);
                 startActivity(intentContinuar);
 
             }
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MetricsActivity.class);
+                intent.putExtra("useremail", userEmail);
                 startActivity(intent);
             }
         });
