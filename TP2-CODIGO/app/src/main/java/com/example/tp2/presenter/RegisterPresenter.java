@@ -5,10 +5,12 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.tp2.R;
+import com.example.tp2.data.Event;
 import com.example.tp2.data.InternetConnection;
 import com.example.tp2.data.SoaAPIErrorMessage;
 import com.example.tp2.data.SoaAPIResponse;
 import com.example.tp2.data.SoaAPIService;
+import com.example.tp2.data.TrustRequest;
 import com.example.tp2.data.User;
 import com.example.tp2.data.UserValidate;
 import com.example.tp2.view.LoginActivity;
@@ -23,6 +25,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RegisterPresenter {
     public RegisterActivity activity;
+    private TrustRequest trustRequest;
+    Event eventoALoguear = new Event();
 
     public RegisterPresenter(RegisterActivity activity) {
         this.activity = activity;
@@ -94,6 +98,14 @@ public class RegisterPresenter {
                             Log.i(TAG, response.body().toString());
 
                             activity.registerSuccessful();
+
+                            //Logueo evento
+                            trustRequest = new TrustRequest(activity.getApplicationContext());
+
+                            eventoALoguear.setEnv("PROD");
+                            eventoALoguear.setType_events("Registro exitoso");
+                            eventoALoguear.setDescription("Se ha registrado el usuario: " + user.getEmail());
+                            trustRequest.registerEvent(eventoALoguear);
 
                         } else {
                             //Parseo la respuesta para poder mostrarla en la app

@@ -3,8 +3,10 @@ package com.example.tp2.presenter;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.tp2.data.Event;
 import com.example.tp2.data.InternetConnection;
 import com.example.tp2.data.SessionManager;
+import com.example.tp2.data.TrustRequest;
 import com.example.tp2.model.DBInsertLogin;
 import com.example.tp2.view.LoginActivity;
 import com.example.tp2.R;
@@ -23,6 +25,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoginPresenter {
     public LoginActivity activity;
     private SessionManager sessionManager;
+    private TrustRequest trustRequest;
+    Event eventoALoguear = new Event();
 
     public LoginPresenter(LoginActivity activity) {
         this.activity = activity;
@@ -60,6 +64,13 @@ public class LoginPresenter {
                         sessionManager.storeEmail(user.getEmail());
                         activity.loginSuccessful();
 
+                        //Logueo evento
+                        trustRequest = new TrustRequest(activity.getApplicationContext());
+
+                        eventoALoguear.setEnv("PROD");
+                        eventoALoguear.setType_events("Logueo exitoso");
+                        eventoALoguear.setDescription("Se ha logueado el usuario: " + user.getEmail());
+                        trustRequest.registerEvent(eventoALoguear);
 
                     } else {
                         //Parseo la respuesta para poder mostrarla en la app

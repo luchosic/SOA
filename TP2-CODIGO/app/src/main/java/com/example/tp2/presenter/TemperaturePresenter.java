@@ -6,12 +6,16 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
-import com.example.tp2.data.SessionManager;
+import com.example.tp2.data.Event;
+import com.example.tp2.data.TrustRequest;
 import com.example.tp2.view.TemperatureActivity;
 
 public class TemperaturePresenter implements SensorEventListener{
     private SensorManager sensorManager;
     private TemperatureActivity activity;
+    private TrustRequest trustRequest;
+    Event eventoALoguear = new Event();
+    float currentValue = 0;
 
     public TemperaturePresenter(TemperatureActivity activity) {
         this.activity = activity;
@@ -35,7 +39,18 @@ public class TemperaturePresenter implements SensorEventListener{
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        activity.textoTemperatura.setText(event.values[0] + " °C");
+        if(currentValue != event.values[0]){
+            //Logueo evento
+            trustRequest = new TrustRequest(activity.getApplicationContext());
+            eventoALoguear.setEnv("PROD");
+            eventoALoguear.setType_events("Detección cambio de Temperatura");
+            eventoALoguear.setDescription("La temperatura medida es: " + event.values[0] + " °C");
+            trustRequest.registerEvent(eventoALoguear);
+
+            currentValue = event.values[0];
+
+            activity.textoTemperatura.setText(event.values[0] + " °C");
+        }
 
         //si la temperatura es mayor a 20 C, habilito el boton para avanzar
         if (event.values[0] >= 20) {

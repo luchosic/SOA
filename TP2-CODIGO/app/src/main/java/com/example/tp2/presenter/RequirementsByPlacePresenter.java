@@ -6,13 +6,17 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
+import com.example.tp2.data.Event;
 import com.example.tp2.data.SessionManager;
+import com.example.tp2.data.TrustRequest;
 import com.example.tp2.view.RequirementsByPlaceActivity;
 
 
 public class RequirementsByPlacePresenter implements SensorEventListener{
     private SensorManager sensorManager;
     private RequirementsByPlaceActivity activity;
+    private TrustRequest trustRequest;
+    Event eventoALoguear = new Event();
 
     public RequirementsByPlacePresenter(RequirementsByPlaceActivity activity) {
         this.activity = activity;
@@ -36,8 +40,15 @@ public class RequirementsByPlacePresenter implements SensorEventListener{
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+        trustRequest = new TrustRequest(activity.getApplicationContext());
+        eventoALoguear.setEnv("PROD");
+        eventoALoguear.setType_events("Detección Shake");
+        eventoALoguear.setDescription("Se ha detectado un shake");
+
         if ((event.values[0] > 25) || (event.values[1] > 25) || (event.values[2] > 25)) {
             activity.continueButton.setEnabled(true);
+            //Logueo evento
+            trustRequest.registerEvent(eventoALoguear);
         }
     }
 

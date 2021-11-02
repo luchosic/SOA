@@ -39,9 +39,9 @@ public class TrustRequest {
             @Override
             public void onResponse(Call<SoaAPIResponse> call, Response<SoaAPIResponse> response) {
                 if (response.isSuccessful()) {
-                    Log.i(TAG, "Se registro el evento" + response.body().toString());
+                    Log.i(TAG, "Se registro el evento: " + response.body().toString());
                 } else {
-                    Log.e(TAG, "No se pudo registrar el evento." + response.errorBody().toString());
+                    Log.e(TAG, "No se pudo registrar el evento: " + response.errorBody().toString());
                 }
             }
 
