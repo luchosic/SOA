@@ -139,7 +139,7 @@ public class User {
             return userValidate;
         }
 
-        if(!(String.valueOf(this.commission).equals(2900) || !(String.valueOf(this.commission).equals(3900)))){
+        if(!(String.valueOf(this.commission).equals("2900") && !(String.valueOf(this.commission).equals("3900")))){
             userValidate.setMsg("La comisión debe ser 2900-Martes o 3900-Miercoles");
             userValidate.setSuccess(false);
             return userValidate;
