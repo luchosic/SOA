@@ -16,7 +16,7 @@ public class MainPresenter {
     }
 
     public void iniciarHilo(){
-         tokenRefresher.start();
+         tokenRefresher.ejecutarThread();
     }
 
     public void storePlace(String selectedPlace) {

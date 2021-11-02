@@ -1,11 +1,14 @@
 package com.example.tp2.data;
 
 import android.content.Context;
+import android.os.Handler;
+import android.widget.Toast;
+
 import java.util.Date;
 
-public class TokenRefresher extends Thread{
+public class TokenRefresher {
 
-    final long tokenWaitingTime = 600000; //milisegundos de espera para volver a consultar si el token está expirado
+    final long tokenWaitingTime = 600000; //Actualizo el token cada 10 minutos.
     SessionManager sessionManager;
     Context context;
     TrustRequest trustRequest;
@@ -16,23 +19,37 @@ public class TokenRefresher extends Thread{
         this.trustRequest = new TrustRequest(this.context);
     }
 
-    /**
-     * Metodo que queda ejecutando en loop inifinito por el while true
-     */
-    public void run(){
-        Long time = new Date().getTime();
+    public void  ejecutarThread(){
+        final Handler mHandler = new Handler();
 
-        while (true && !this.isInterrupted()){
-            Long currentTime = new Date().getTime();
+        new Thread(new Runnable() {
 
-            if((currentTime - time) >= tokenWaitingTime){ // Verifico el token cada 500 ms (medio segudo)
-                time = currentTime;
+            Long time = new Date().getTime();
 
-                if(this.sessionManager.isTokenExpired()){
-                    this.trustRequest.refreshToken();
+            @Override
+            public void run () {
+
+                Runnable refresh = new Runnable() {
+                    @Override
+                    public void run(){
+                        Toast.makeText(context.getApplicationContext(),"Token actualizado!",Toast.LENGTH_LONG).show();
+                    }
+                };
+
+                while (true){
+                    Long currentTime = new Date().getTime();
+
+                    if((currentTime - time) >= tokenWaitingTime){
+                        time = currentTime;
+
+                        if(sessionManager.isTokenExpired()){
+                            trustRequest.refreshToken();
+                            mHandler.post(refresh);
+                        }
+                    }
                 }
             }
-        }
-    }
+        }).start();
 
+}
 }
