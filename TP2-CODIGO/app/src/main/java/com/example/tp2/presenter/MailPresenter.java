@@ -23,8 +23,7 @@ public class MailPresenter {
         else{
             if(InternetConnection.isOnline(activity)) {
                 String randomCode;
-                //randomCode = String.valueOf((int)(Math.random() * 9000) + 1000);
-                randomCode = String.valueOf("1234");
+                randomCode = String.valueOf((int)(Math.random() * 9000) + 1000);
 
                 sendMail(randomCode);
 

@@ -70,6 +70,8 @@ public class RequirementsByPlaceActivity extends AppCompatActivity{
         presenter.setupSensorManager();
         presenter.startSensoring();
 
+        continueButton.setEnabled(false); //Se habilita con el shake
+
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
