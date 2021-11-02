@@ -18,6 +18,7 @@ public class TemperatureActivity extends AppCompatActivity{
     public Button volverButton;
     public Button irButton;
     public TextView textoTemperatura;
+    String userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class TemperatureActivity extends AppCompatActivity{
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         String selectedPlace = extras.getString("selectedPlace");
-        String userEmail = extras.getString("useremail");
+        userEmail = extras.getString("useremail");
 
         presenter = new TemperaturePresenter(this);
         presenter.setupSensorManager();
@@ -89,4 +90,5 @@ public class TemperatureActivity extends AppCompatActivity{
         super.onResume();
         presenter.startSensoring();
     }
+
 }

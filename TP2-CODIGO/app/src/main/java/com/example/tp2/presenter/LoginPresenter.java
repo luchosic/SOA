@@ -4,6 +4,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.tp2.data.InternetConnection;
+import com.example.tp2.data.SessionManager;
 import com.example.tp2.model.DBInsertLogin;
 import com.example.tp2.view.LoginActivity;
 import com.example.tp2.R;
@@ -21,6 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginPresenter {
     public LoginActivity activity;
+    private SessionManager sessionManager;
 
     public LoginPresenter(LoginActivity activity) {
         this.activity = activity;
@@ -33,6 +35,8 @@ public class LoginPresenter {
         DBInsertLogin model = new DBInsertLogin(activity, user);
 
         if (InternetConnection.isOnline(activity)) {
+
+            this.sessionManager = new SessionManager(activity.getApplicationContext());
 
             Retrofit retrofit = new Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
@@ -52,7 +56,8 @@ public class LoginPresenter {
                         Log.i(TAG, response.body().toString());
 
                         model.insertInDB();
-
+                        sessionManager.storeTokens(response.body().getToken(), response.body().getToken_refresh());
+                        sessionManager.storeEmail(user.getEmail());
                         activity.loginSuccessful();
 
 

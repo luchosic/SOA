@@ -22,6 +22,7 @@ public class RequirementsByPlaceActivity extends AppCompatActivity{
     TextView textSelectedPlace;
     public Button volverBoton;
     public Button continueButton;
+    String userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class RequirementsByPlaceActivity extends AppCompatActivity{
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         String selectedPlace = extras.getString("selectedPlace");
-        String userEmail = extras.getString("useremail");
+        userEmail = extras.getString("useremail");
 
         textSelectedPlace = findViewById(R.id.selectedPlace);
         requirementsTeatro = findViewById(R.id.requisitosTeatro);
@@ -87,13 +88,6 @@ public class RequirementsByPlaceActivity extends AppCompatActivity{
                 startActivity(intentVolver);
             }
         });
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        presenter.startSensoring();
     }
 
     @Override
@@ -118,5 +112,11 @@ public class RequirementsByPlaceActivity extends AppCompatActivity{
     protected void onRestart() {
         presenter.startSensoring();
         super.onRestart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        presenter.startSensoring();
     }
 }

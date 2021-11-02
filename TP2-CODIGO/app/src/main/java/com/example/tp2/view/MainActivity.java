@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     String[] listItem;
     Button metricasBoton;
+    String userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        String userEmail = extras.getString("useremail");
+        userEmail = extras.getString("useremail");
 
         textBienvenida.setText("¡Bienvenid@ " + userEmail + "!");
 
         presenter = new MainPresenter(this);
+        presenter.iniciarHilo();
 
         listItem = getResources().getStringArray(R.array.lista_places);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -74,5 +76,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    
 }

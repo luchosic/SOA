@@ -6,6 +6,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
+import com.example.tp2.data.SessionManager;
 import com.example.tp2.view.TemperatureActivity;
 
 public class TemperaturePresenter implements SensorEventListener{

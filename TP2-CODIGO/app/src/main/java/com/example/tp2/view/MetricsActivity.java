@@ -20,6 +20,7 @@ public class MetricsActivity extends AppCompatActivity {
 
     public MetricsPresenter presenter;
     public Button volverBoton;
+    public String userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class MetricsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        String userEmail = extras.getString("useremail");
+        userEmail = extras.getString("useremail");
 
         presenter = new MetricsPresenter(this);
 

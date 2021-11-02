@@ -1,6 +1,6 @@
 package com.example.tp2.data;
 
-import android.media.metrics.Event;
+import com.example.tp2.data.Event;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

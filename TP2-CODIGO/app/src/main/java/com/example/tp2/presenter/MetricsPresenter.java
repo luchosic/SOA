@@ -1,6 +1,8 @@
 package com.example.tp2.presenter;
 
 import com.example.tp2.data.PlaceMostVisitedMetric;
+import com.example.tp2.data.SessionManager;
+import com.example.tp2.data.TokenRefresher;
 import com.example.tp2.data.UserConexionMetric;
 import com.example.tp2.model.DBInsertPlaces;
 import com.example.tp2.model.DBMetrics;
@@ -29,4 +31,5 @@ public class MetricsPresenter {
 
         return model.calculatePlaceMostVisited();
     }
+
 }
