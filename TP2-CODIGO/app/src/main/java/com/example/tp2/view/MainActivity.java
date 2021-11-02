@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     String[] listItem;
     Button metricasBoton;
     String userEmail;
+    Button logoutBoton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +35,10 @@ public class MainActivity extends AppCompatActivity {
         TextView textBienvenida;
 
         textBienvenida = findViewById(R.id.textBienvenida);
-        listView=(ListView)findViewById(R.id.listView);
-        textView=(TextView)findViewById(R.id.textoBienvenida);
-        metricasBoton = (Button) findViewById(R.id.metricasBoton);
+        listView = findViewById(R.id.listView);
+        textView = findViewById(R.id.textoBienvenida);
+        metricasBoton = findViewById(R.id.metricasBoton);
+        logoutBoton = findViewById(R.id.logoutBoton);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -72,6 +74,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MetricsActivity.class);
                 intent.putExtra("useremail", userEmail);
+                startActivity(intent);
+            }
+        });
+
+        logoutBoton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.detenerHilo();
+
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.putExtra("useremail", "");
                 startActivity(intent);
             }
         });

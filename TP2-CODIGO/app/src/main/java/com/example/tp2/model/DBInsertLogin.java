@@ -2,6 +2,7 @@ package com.example.tp2.model;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -15,17 +16,17 @@ import java.util.TimeZone;
 
 public class DBInsertLogin {
 
-    public LoginActivity activity;
+    public Context context;
     public User user;
 
-    public DBInsertLogin(LoginActivity activity, User user) {
-        this.activity = activity;
+    public DBInsertLogin(Context context, User user) {
+        this.context = context;
         this.user = user;
     }
 
     public void insertInDB(){
 
-        MyOpenHelper dbHelper = new MyOpenHelper(activity.getApplicationContext());
+        MyOpenHelper dbHelper = new MyOpenHelper(context.getApplicationContext());
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         if (db != null) {

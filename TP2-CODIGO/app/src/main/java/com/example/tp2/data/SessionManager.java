@@ -55,29 +55,8 @@ public class SessionManager {
         return (diff_in_ms >= token_expired_miliseconds);
     }
 
-    //public boolean userHasTokens(){
-    //    String token = this.sharedPrefs.getString("token", "");
-    //    String refreshToken = this.sharedPrefs.getString("refreshToken", "");
-    //
-    //    return !token.isEmpty() && !refreshToken.isEmpty();
-    //}
-
-    ///**
-    // * Pone en blanco los tokens. Se utiliza para el logout
-    // */
-    //public void endSession(){
-    //    this.sharedPrefs.edit().putString("token", "").commit();
-    //    this.sharedPrefs.edit().putString("refreshToken", "").commit();
-    //}
-
-    /**
-     * Metodo para almacenar el mail para que luego sea mostrado dentro de la app
-     */
-    public void storeEmail(String userEmail){
-        this.sharedPrefs.edit().putString("userEmail", userEmail.split("@")[0].trim()).commit();
-    }
-
-    public String getEmail(){
-        return this.sharedPrefs.getString("userEmail", "");
+    public void endSession(){
+        this.sharedPrefs.edit().putString("token", "").commit();
+        this.sharedPrefs.edit().putString("refreshToken", "").commit();
     }
 }

@@ -40,8 +40,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     public RegisterPresenter presenter;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +56,8 @@ public class RegisterActivity extends AppCompatActivity {
         editTextEmail        = findViewById(R.id.mailRegistro);
         editTextPassword     = findViewById(R.id.passwordRegistro);
         editTextGrupo        = findViewById(R.id.grupoRegistro);
-        volverBtn = (Button)findViewById(R.id.volverButton);
-        registrateButtom = (Button)findViewById(R.id.registrateButtom);
+        volverBtn            = findViewById(R.id.volverButton);
+        registrateButtom     = findViewById(R.id.registrateButtom);
 
         editTextEmail.setText(userEmail);
 
@@ -87,22 +85,19 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    public void registerSuccessful() {
+    public void registerSuccessful(String email) {
         Toast.makeText(getApplicationContext(), "Usuario registrado exitosamente", Toast.LENGTH_LONG).show();
 
         //Voy a la pantalla de Login
-        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-        i.putExtra("useremail", userEmail);
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        i.putExtra("useremail", email.split("@")[0].trim());
         startActivity(i);
     }
 
     public void registerFailure(String error) {
         Toast.makeText(getApplicationContext(), "Hubo un error: " + error, Toast.LENGTH_LONG).show();
 
-        System.out.println("llego a la falla");
-
         //Habilito el boton nuevamente para que pueda intentar registrarse
         registrateButtom.setEnabled(true);
-
     }
 }

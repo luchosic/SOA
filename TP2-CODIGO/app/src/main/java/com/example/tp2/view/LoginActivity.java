@@ -30,8 +30,8 @@ public class LoginActivity extends AppCompatActivity {
 
         editTextEmail = findViewById(R.id.user);
         editTextPassword = findViewById(R.id.password);
-        loginButton = (Button)findViewById(R.id.loginButton);
-        registroBtn = (Button)findViewById(R.id.registroButton);
+        loginButton = findViewById(R.id.loginButton);
+        registroBtn = findViewById(R.id.registroButton);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void loginSuccessful() {
         Intent intentContinuar = new Intent(getApplicationContext(), MainActivity.class);
-        intentContinuar.putExtra("useremail", userEmail.split("@")[0].trim());
+        intentContinuar.putExtra("useremail", editTextEmail.getText().toString().split("@")[0].trim());
         startActivity(intentContinuar);
     }
 

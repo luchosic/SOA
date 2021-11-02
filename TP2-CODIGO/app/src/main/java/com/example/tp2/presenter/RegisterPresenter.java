@@ -7,12 +7,14 @@ import android.widget.Toast;
 import com.example.tp2.R;
 import com.example.tp2.data.Event;
 import com.example.tp2.data.InternetConnection;
+import com.example.tp2.data.SessionManager;
 import com.example.tp2.data.SoaAPIErrorMessage;
 import com.example.tp2.data.SoaAPIResponse;
 import com.example.tp2.data.SoaAPIService;
 import com.example.tp2.data.TrustRequest;
 import com.example.tp2.data.User;
 import com.example.tp2.data.UserValidate;
+import com.example.tp2.model.DBInsertLogin;
 import com.example.tp2.view.LoginActivity;
 import com.example.tp2.view.RegisterActivity;
 import com.google.gson.Gson;
@@ -27,11 +29,11 @@ public class RegisterPresenter {
     public RegisterActivity activity;
     private TrustRequest trustRequest;
     Event eventoALoguear = new Event();
+    private SessionManager sessionManager;
 
     public RegisterPresenter(RegisterActivity activity) {
         this.activity = activity;
     }
-
 
     public void registerUser(){
         final String TAG = "RegisterActivity";
@@ -67,6 +69,8 @@ public class RegisterPresenter {
 
         if (userValidate.isSuccess()) {
 
+            DBInsertLogin model = new DBInsertLogin(activity, user);
+
             if(InternetConnection.isOnline(activity)) {
 
                 //iniciamos la conexión con el server
@@ -92,20 +96,21 @@ public class RegisterPresenter {
                             activity.editTextPassword.setText("");
 
                             //Guardo los tokens en el sharedPreferences
-                            //sessionManager.storeTokens(response.body().getToken(), response.body().getToken_refresh());
-                            //sessionManager.storeEmail(editTextEmail.getText().toString());
+                            sessionManager = new SessionManager(activity.getApplicationContext());
+                            sessionManager.storeTokens(response.body().getToken(), response.body().getToken_refresh());
 
-                            Log.i(TAG, response.body().toString());
-
-                            activity.registerSuccessful();
+                            //Inserto en base de datos
+                            model.insertInDB();
 
                             //Logueo evento
                             trustRequest = new TrustRequest(activity.getApplicationContext());
 
-                            eventoALoguear.setEnv("PROD");
+                            eventoALoguear.setEnv(activity.getResources().getString(R.string.APIEnvoriment));
                             eventoALoguear.setType_events("Registro exitoso");
                             eventoALoguear.setDescription("Se ha registrado el usuario: " + user.getEmail());
                             trustRequest.registerEvent(eventoALoguear);
+
+                            activity.registerSuccessful(user.getEmail());
 
                         } else {
                             //Parseo la respuesta para poder mostrarla en la app

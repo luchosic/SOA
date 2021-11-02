@@ -12,6 +12,7 @@ public class TokenRefresher {
     SessionManager sessionManager;
     Context context;
     TrustRequest trustRequest;
+    boolean isRunning = true;
 
     public TokenRefresher(Context context) {
         this.context = context;
@@ -36,7 +37,7 @@ public class TokenRefresher {
                     }
                 };
 
-                while (true){
+                while (isRunning){
                     Long currentTime = new Date().getTime();
 
                     if((currentTime - time) >= tokenWaitingTime){
@@ -50,6 +51,9 @@ public class TokenRefresher {
                 }
             }
         }).start();
+    }
 
-}
+    public void detenerThread(){
+        isRunning = false;
+    }
 }

@@ -6,6 +6,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
+import com.example.tp2.R;
 import com.example.tp2.data.Event;
 import com.example.tp2.data.SessionManager;
 import com.example.tp2.data.TrustRequest;
@@ -41,7 +42,7 @@ public class RequirementsByPlacePresenter implements SensorEventListener{
     @Override
     public void onSensorChanged(SensorEvent event) {
         trustRequest = new TrustRequest(activity.getApplicationContext());
-        eventoALoguear.setEnv("PROD");
+        eventoALoguear.setEnv(activity.getResources().getString(R.string.APIEnvoriment));
         eventoALoguear.setType_events("Detección Shake");
         eventoALoguear.setDescription("Se ha detectado un shake");
 

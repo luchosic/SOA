@@ -58,7 +58,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginBottom="103dp"
         android:text="LOGIN"
-        android:textColor="#212121"
+        android:textColor="#FFFFFF"
         app:backgroundTint="#5B9F57"
         app:layout_constraintBottom_toTopOf="@+id/textoNoUser"
         app:layout_constraintEnd_toEndOf="parent"

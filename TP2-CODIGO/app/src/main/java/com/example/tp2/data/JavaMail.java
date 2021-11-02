@@ -15,8 +15,6 @@ import javax.mail.internet.MimeMessage;
 
 public class JavaMail extends AsyncTask<Void,Void,Void>{
 
-    //Need INTERNET permission
-
     //Variables
     private Context mContext;
     private Session mSession;
@@ -38,17 +36,13 @@ public class JavaMail extends AsyncTask<Void,Void,Void>{
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        //Show progress dialog while sending email
         mProgressDialog = ProgressDialog.show(mContext,"Sending message", "Please wait...",false,false);
     }
 
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        //Dismiss progress dialog when message successfully send
         mProgressDialog.dismiss();
-
-        //Show success toast
         Toast.makeText(mContext,"Message Sent",Toast.LENGTH_SHORT).show();
     }
 
@@ -57,8 +51,6 @@ public class JavaMail extends AsyncTask<Void,Void,Void>{
         //Creating properties
         Properties props = new Properties();
 
-        //Configuring properties for gmail
-        //If you are not using gmail you may need to change the values
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.socketFactory.port", "465");
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
@@ -75,7 +67,6 @@ public class JavaMail extends AsyncTask<Void,Void,Void>{
                 });
 
         try {
-            //Creating MimeMessage object
             MimeMessage mm = new MimeMessage(mSession);
 
             //Setting sender address
@@ -88,26 +79,6 @@ public class JavaMail extends AsyncTask<Void,Void,Void>{
             mm.setText(mMessage);
             //Sending email
             Transport.send(mm);
-
-//            BodyPart messageBodyPart = new MimeBodyPart();
-//
-//            messageBodyPart.setText(message);
-//
-//            Multipart multipart = new MimeMultipart();
-//
-//            multipart.addBodyPart(messageBodyPart);
-//
-//            messageBodyPart = new MimeBodyPart();
-//
-//            DataSource source = new FileDataSource(filePath);
-//
-//            messageBodyPart.setDataHandler(new DataHandler(source));
-//
-//            messageBodyPart.setFileName(filePath);
-//
-//            multipart.addBodyPart(messageBodyPart);
-
-//            mm.setContent(multipart);
 
         } catch (MessagingException e) {
             e.printStackTrace();

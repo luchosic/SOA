@@ -11,6 +11,7 @@
     <string name="continuar">Continuar</string>
     <string name="seleccione_lugar">Seleccione el lugar que desea visitar para conocer sus requisitos:</string>
     <string name="ver_metricas">Ver métricas</string>
+    <string name="logout">Cerrar sesión</string>
     <string name="cantidad_logueos">Cantidad de logueos por franja horaria:</string>
     <string name="cantidad_visitas">Cantidad de visitas a cada lugar:</string>
     <string name="leyenda_lugar">Usted ha seleccionado: </string>

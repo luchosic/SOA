@@ -61,13 +61,12 @@ public class LoginPresenter {
 
                         model.insertInDB();
                         sessionManager.storeTokens(response.body().getToken(), response.body().getToken_refresh());
-                        sessionManager.storeEmail(user.getEmail());
                         activity.loginSuccessful();
 
                         //Logueo evento
                         trustRequest = new TrustRequest(activity.getApplicationContext());
 
-                        eventoALoguear.setEnv("PROD");
+                        eventoALoguear.setEnv(activity.getResources().getString(R.string.APIEnvoriment));
                         eventoALoguear.setType_events("Logueo exitoso");
                         eventoALoguear.setDescription("Se ha logueado el usuario: " + user.getEmail());
                         trustRequest.registerEvent(eventoALoguear);

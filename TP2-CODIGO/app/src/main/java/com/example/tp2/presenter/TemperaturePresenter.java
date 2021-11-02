@@ -6,6 +6,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
+import com.example.tp2.R;
 import com.example.tp2.data.Event;
 import com.example.tp2.data.TrustRequest;
 import com.example.tp2.view.TemperatureActivity;
@@ -42,7 +43,7 @@ public class TemperaturePresenter implements SensorEventListener{
         if(currentValue != event.values[0]){
             //Logueo evento
             trustRequest = new TrustRequest(activity.getApplicationContext());
-            eventoALoguear.setEnv("PROD");
+            eventoALoguear.setEnv(activity.getResources().getString(R.string.APIEnvoriment));
             eventoALoguear.setType_events("Detección cambio de Temperatura");
             eventoALoguear.setDescription("La temperatura medida es: " + event.values[0] + " °C");
             trustRequest.registerEvent(eventoALoguear);
